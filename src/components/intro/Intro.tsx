@@ -1,10 +1,12 @@
 import { useEffect, useRef, useState } from 'react'
 import { introTimeline, introTimelineReduced } from '@/animations/intro'
-import { Wordmark } from '@/components/brand/Wordmark'
 import { useScrollLock } from '@/hooks/useScrollLock'
 import { gsap, mq, useGSAP } from '@/lib/gsap'
 
 const FONT_WAIT_MS = 1200
+
+/** The intro lockup, one entry per stacked line */
+const INTRO_LINES = ['PRIVÉ', 'AUTO']
 
 /**
  * Opening intro: black screen → signature rules → letter-by-letter stacked
@@ -76,10 +78,23 @@ export function Intro({ onComplete }: { onComplete: () => void }) {
     <div ref={root} className="intro" aria-hidden="true">
       <div data-intro-curtain className="intro__curtain" />
       <div data-intro-mark className="intro__mark">
-        {/* Same font-size as the wordmark, so the rules' em sizing tracks it */}
-        <div className="intro__lockup wordmark--intro">
+        {/* Same font-size as the lockup, so the rules' em sizing tracks it */}
+        <div className="intro__lockup intro-wm--size">
           <span data-intro-rule className="intro__rule intro__rule--top" />
-          <Wordmark className="wordmark--intro" />
+          {/* Intro only: typeset PRIVÉ over AUTO, in the same Michroma
+              treatment (weight, scale, tracking) as the original intro. The
+              logo SVG (Wordmark) is used everywhere else. */}
+          <span role="img" aria-label="Privé Auto" className="intro-wm intro-wm--size">
+            {INTRO_LINES.map((line, i) => (
+              <span key={line} aria-hidden="true" className={i === 0 ? 'intro-wm__primary' : 'intro-wm__secondary'}>
+                {[...line].map((char, j) => (
+                  <span key={j} data-wm-letter className="intro-wm__letter">
+                    {char}
+                  </span>
+                ))}
+              </span>
+            ))}
+          </span>
           <span data-intro-rule className="intro__rule intro__rule--bottom" />
         </div>
       </div>

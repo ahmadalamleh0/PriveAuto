@@ -203,14 +203,6 @@
     font-size: 1.625rem; /* ≈112px wide, 19.5px cap */
   }
 
-  /*
-   * Intro: the mark is 4.32em wide. Height-bound on most screens (cap ≈ 5.3vh),
-   * width-bound on narrow phones (at most 72vw wide).
-   */
-  .wordmark--intro {
-    font-size: min(7vh, calc(72vw / 4.32));
-  }
-
   @media (min-width: 768px) {
     .wordmark--nav {
       font-size: 1.75rem; /* ≈121px wide */
@@ -3320,9 +3312,50 @@
    */
   .intro__lockup {
     display: flex; /* no line box: the lockup is exactly the wordmark's height */
-    --rule-length: 1.25em;
-    --rule-distance: 0.85em; /* from the mark itself */
+    --rule-length: 2.2em;
+    --rule-distance: 1.5em; /* from the letters themselves now there's no frame */
     position: relative;
+  }
+
+  /*
+   * Intro lockup: typeset PRIVÉ over AUTO in Michroma 400, exactly the
+   * original intro's treatment (same letter size, tracking and leading as
+   * MANSOR / CUSTOMS). AUTO is 42% of PRIVÉ's size and about 60% of its
+   * width: PRIVÉ = 4.15em advance + 4 × 0.62em = 6.63em; AUTO = 0.42 ×
+   * (4.08em + 3 × 1.8em) = 3.98em. Michroma cap height = 0.75em.
+   */
+  .intro-wm--size {
+    font-size: min(4vh, calc(84vw / 11.68)); /* the original intro size */
+  }
+
+  .intro-wm {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.38em;
+    font-family: var(--font-brand);
+    font-weight: 400;
+    line-height: 0.75;
+    color: #fff;
+    white-space: nowrap;
+  }
+
+  .intro-wm__primary,
+  .intro-wm__secondary {
+    display: flex;
+  }
+
+  .intro-wm__primary {
+    gap: 0.62em;
+  }
+
+  .intro-wm__secondary {
+    gap: 1.8em;
+    font-size: 0.42em;
+  }
+
+  .intro-wm__letter {
+    display: block;
   }
 
   .intro__rule {
