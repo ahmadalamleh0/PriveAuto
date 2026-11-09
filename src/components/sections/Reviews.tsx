@@ -65,7 +65,7 @@ function ReviewCard({ review }: { review: Review }) {
   return (
     <figure className="review-card" data-demo={review.demo || undefined}>
       <div className="review-card__top">
-        <Stars rating={review.rating} />
+        {review.rating ? <Stars rating={review.rating} /> : <span aria-hidden="true" />}
         {review.demo ? <span className="review-card__demo">Demo</span> : review.source === 'google' && <GoogleBadge />}
       </div>
       <blockquote className="review-card__text">
