@@ -11,6 +11,7 @@ Privé Auto's business has been invented.
 - Instagram: @priveauto (profile, message, Reels links; API default account).
 - Reviews: five genuine Google reviews (star ratings still to supply).
 - Brand strip: Mansory, Limited Spec Automotive, Strasse Forged (client-supplied logos).
+- Visit Us preview: the client's Miami satellite overview.
 
 ## Placeholders to fill (visible on the site)
 
@@ -25,7 +26,6 @@ Privé Auto's business has been invented.
 - **Hero photo** `src/assets/images/hero/shopfront-twilight.jpg`: shows the MANSOR CUSTOMS sign.
 - **Hero films** `src/assets/videos/hero-r8*.mp4` (and unused `hero.mp4`, `hero-mobile.mp4`, `hero-poster.jpg`): Mansor's footage.
 - **Instagram Reels** `src/assets/reels/*`: Mansor's Reels; the camo-Lamborghini one shows the MANSOR sign, and the BMW one has "Bergen County" burned into the video.
-- **Visit Us aerial** `src/assets/images/location-aerial.jpg`: pinned on Mansor's shop in NJ.
 - **Recent Work** `src/assets/images/projects/*` (`src/data/projects.ts`): Mansor's builds. The BMW XM, M3 and McLaren shots were taken outside the shop under its sign; the pink G-Class interior shows a Mansor air freshener.
 - **Tuning gallery** `src/assets/images/tuning/*` and the SF90 media: Mansor's workshop footage.
 - **Service cards** `src/assets/images/services/*`: supplied by Mansor.

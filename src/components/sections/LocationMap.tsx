@@ -59,8 +59,8 @@ export function LocationMap() {
           <img
             src={aerial}
             alt={`Aerial view of the area around ${location.name}`}
-            width={1536}
-            height={1024}
+            width={1672}
+            height={941}
             loading="lazy"
             decoding="async"
             className="location-map__preview"

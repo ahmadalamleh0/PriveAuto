@@ -734,15 +734,16 @@
     background: #1a1a1a; /* while the imagery loads */
   }
 
-  /* Aerial preview: the pin sits at the image centre, so a centred cover
-     crop keeps it in view at every width */
+  /* Aerial preview (Miami satellite overview, client 2026-11-09): the crop is
+     centred on the pin (58% across, 39% down), so it stays in view at every
+     width */
   .location-map__preview {
     position: absolute;
     inset: 0;
     width: 100%;
     height: 100%;
     object-fit: cover;
-    object-position: 50% 50%;
+    object-position: 58% 42%;
   }
 
   /* Live Google map fades in over the preview once it has loaded */

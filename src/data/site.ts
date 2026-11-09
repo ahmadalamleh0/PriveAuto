@@ -191,8 +191,8 @@ export const site = {
 
   // PLACEHOLDER: Privé Auto's address is not confirmed yet. Set the real
   // address (Get Directions and the live map query it) and coordinates. The
-  // aerial preview image (assets/images/location-aerial.jpg) also still
-  // shows the Mansor Customs location and must be replaced.
+  // aerial preview (assets/images/location-aerial.jpg) is the client's Miami
+  // satellite overview (2026-11-09).
   location: {
     name: 'Privé Auto',
     address: 'Address to be confirmed',
