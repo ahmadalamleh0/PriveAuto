@@ -5,19 +5,20 @@ design is unchanged. Everything below is a placeholder or carried-over content
 that must be replaced or confirmed by Privé Auto before launch. Nothing about
 Privé Auto's business has been invented.
 
+## Done
+
+- Logo: PRIVÉ redrawn as SVG from the client's logo (`components/brand/Wordmark.tsx`): intro, header, footer, Instagram avatar, icons and share image.
+- Instagram: @priveauto (profile, message, Reels links; API default account).
+- Reviews: five genuine Google reviews (star ratings still to supply).
+
 ## Placeholders to fill (visible on the site)
 
 | What | Where | Current placeholder |
 |---|---|---|
-| Logo (header, footer, intro, Instagram avatar) | `src/components/brand/BrandLogo.tsx`, `site.wordmark` | Typeset PRIVÉ / AUTO in Michroma |
-| Favicons, app icons, social share image | `public/favicon*`, `public/icon-*`, `public/apple-touch-icon.png`, `public/og-image.jpg` | Typeset "P" monogram / PRIVÉ AUTO lockup |
 | Address | `site.location` in `src/data/site.ts` | "Address to be confirmed" (lat/lng 0, 0) |
-| Instagram handle and links | `site.instagram` in `src/data/site.ts` | `@handle.tbc`, links to instagram.com |
-| Instagram API account | `netlify/lib/instagram.mts`, env `INSTAGRAM_USERNAME` | defaults to `handle.tbc` |
-| Reviews (8 cards) | `src/data/reviews.ts` | "Placeholder review…", tagged Demo |
 | Partner brand strip | `src/data/banner.ts` | "Partner 01–06" |
 | Production URL | `vite.config.ts` (or env `SITE_URL`) | `https://prive-auto.example` |
-| Contact, booking, socials | `site.contact`, `site.hero.cta`, `site.socials` | Unset (Coming Soon dialog), as before |
+| Contact, booking | `site.contact`, `site.hero.cta` | Unset (Coming Soon dialog), as before |
 
 ## Mansor Customs imagery still in use (replace)
 

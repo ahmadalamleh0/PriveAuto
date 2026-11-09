@@ -44,10 +44,6 @@ export type SocialLink = { platform: string; url: string | null }
 export const site = {
   name: 'Privé Auto',
 
-  // Logo lockup, one entry per stacked line. Typeset placeholder until
-  // Privé Auto's own logo files are supplied.
-  wordmark: ['Privé', 'Auto'],
-
   // Hero copy (DAS Tuning-inspired composition). The headline is approved
   // copy, sentence case, two lines at every width (creative director,
   // 2026-10-15): "Experience your car's" / "full potential."
@@ -111,15 +107,14 @@ export const site = {
   // message handler (opens the DM in the app on phones).
   // followers / verified: UNCONFIRMED. Instagram doesn't expose them
   // publicly, so they stay null (hidden) until confirmed.
-  // PLACEHOLDER: Privé Auto's Instagram handle is not confirmed yet. Set the
-  // real handle and its profile, message (ig.me/m/<handle>) and Reels URLs.
+  // Privé Auto's Instagram, supplied by the client (2026-11-09)
   instagram: {
-    handle: 'handle.tbc',
-    profileUrl: 'https://www.instagram.com/',
-    messageUrl: 'https://www.instagram.com/',
+    handle: 'priveauto',
+    profileUrl: 'https://www.instagram.com/priveauto/',
+    messageUrl: 'https://ig.me/m/priveauto',
     followers: null as string | null,
     verified: null as boolean | null,
-    reelsUrl: 'https://www.instagram.com/',
+    reelsUrl: 'https://www.instagram.com/priveauto/reels/',
     // PLACEHOLDER FOOTAGE: three Reels carried over from the Mansor Customs
     // build (web copies: 540×960, muted, H.264). Replace with Privé Auto's. No
     // individual permalinks yet, so each card links to the Reels tab; add a
@@ -219,6 +214,6 @@ export const site = {
 
   // UNCONFIRMED — add verified profile URLs only.
   socials: [
-    { platform: 'Instagram', url: null },
+    { platform: 'Instagram', url: 'https://www.instagram.com/priveauto/' },
   ] as SocialLink[],
 }

@@ -1,6 +1,6 @@
-# Instagram Reels: connecting @<handle>
+# Instagram Reels: connecting @priveauto
 
-The homepage shows the latest three Reels from @<handle>. It uses
+The homepage shows the latest three Reels from @priveauto. It uses
 Meta's official **Instagram API with Instagram Login**, read-only. When a
 new Reel is published, the site picks it up within about an hour. No
 redeploy or manual upload is needed.
@@ -9,7 +9,7 @@ redeploy or manual upload is needed.
 
 | Piece | What it does |
 | --- | --- |
-| `netlify/functions/instagram-auth.mts` | A one-time connect flow, using Instagram's own login and consent screen. It requests one permission, `instagram_business_basic`, which is read-only. It accepts only the @<handle> account and stores the 60-day token in Netlify Blobs, server-side. |
+| `netlify/functions/instagram-auth.mts` | A one-time connect flow, using Instagram's own login and consent screen. It requests one permission, `instagram_business_basic`, which is read-only. It accepts only the @priveauto account and stores the 60-day token in Netlify Blobs, server-side. |
 | `netlify/functions/instagram-sync.mts` | Runs **every hour**. It fetches the latest Reels and stores them. Once the token is a week old, it renews it, so the connection never lapses. |
 | `netlify/functions/instagram-reels.mts` | `GET /api/instagram-reels`, called by the page. It serves the last sync from Blobs, so visitors never trigger a call to Meta. The CDN caches it for 5 minutes. If the stored result is stale, it syncs on demand. |
 | `src/components/ui/ReelCard.tsx` | Our own 9:16 inline player. It shows the thumbnail first and loads the video lazily. Video is muted, plays inline on loop, and pauses off screen. It has a play/pause button and a "View Reel" link. |
@@ -27,7 +27,7 @@ Tokens, the app secret and the connect key never reach the browser or git.
 ## One-time setup
 
 ### 1. Instagram account (client)
-@<handle> must be an Instagram **professional account**: Business or
+@priveauto must be an Instagram **professional account**: Business or
 Creator. To check or switch, go to Instagram → Settings → Account type and tools.
 
 ### 2. Meta app (the client's Meta developer account, or ours with the client's account added)
@@ -44,7 +44,7 @@ Creator. To check or switch, go to Instagram → Settings → Account type and t
 5. App Review: Meta's docs say it is **not required** when the app only
    serves a business you own or manage (Standard Access).
 6. If the login screen refuses the account, the app is probably still in
-   development mode and the account has no role on it. Add @<handle>
+   development mode and the account has no role on it. Add @priveauto
    to the app's roles as an Instagram tester, then accept the invite in
    Instagram. Dashboard wording changes often; follow what the dashboard
    shows.
@@ -58,15 +58,15 @@ Go to Site configuration → Environment variables. Mark the secrets as
 | `INSTAGRAM_APP_ID` | Instagram app ID (step 2.2) |
 | `INSTAGRAM_APP_SECRET` | Instagram app secret (step 2.2). **Secret.** |
 | `INSTAGRAM_CONNECT_KEY` | Any long random string, for example from `openssl rand -hex 32`. **Secret.** |
-| `INSTAGRAM_USERNAME` | Optional. Defaults to `handle.tbc` (placeholder). |
+| `INSTAGRAM_USERNAME` | Optional. Defaults to `priveauto`. |
 | `INSTAGRAM_REDIRECT_URI` | Optional. Defaults to `$URL/api/instagram-auth/callback`. Set it only if the redirect URI in the app uses a different domain. |
 
 Redeploy after setting them.
 
 ### 4. Connect (about 1 minute, with the client present)
 1. Open `https://<live-domain>/api/instagram-auth/start?key=<INSTAGRAM_CONNECT_KEY>`.
-2. Log in as **@<handle>** and approve.
-3. The page should say "@<handle> is connected. 3 Reels synced."
+2. Log in as **@priveauto** and approve.
+3. The page should say "@priveauto is connected. 3 Reels synced."
    The section goes live right away.
 
 Any other account is rejected, and its token is not stored.

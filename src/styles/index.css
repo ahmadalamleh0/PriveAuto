@@ -155,46 +155,17 @@
   }
 
   /*
-   * Wordmark lockup (typeset placeholder until Privé Auto's logo arrives):
-   * PRIVÉ is the identity, and AUTO is a small tracked subtitle centred
-   * beneath it, 42% of PRIVÉ's size and about 60% of its width (the same
-   * proportions as the original lockup). PRIVÉ = 4.15em advance + 4 × 0.62em
-   * tracking = 6.63em. AUTO = 0.42 × (4.08em + 3 × 1.8em) = 3.98em, so 60%
-   * of PRIVÉ. Michroma cap height = 0.75em.
+   * Wordmark: the PRIVÉ logo as inline SVG (components/brand/Wordmark.tsx),
+   * redrawn from the client's logo. Sized by font-size so em-based spacing
+   * around it keeps working: the cap height is 0.75em and the whole mark,
+   * accent included, is 4.32em × 0.99em.
    */
   .wordmark {
-    --wm-track: 0.62em; /* primary line letter spacing */
-    --wm-secondary: 0.42; /* subtitle size relative to the primary line */
-    --wm-sub-track: 1.8em; /* subtitle letter spacing, in its own em */
-    --wm-leading: 0.38em; /* space between the two lines (~half of the primary cap height) */
-    position: relative;
-    display: inline-flex;
-    flex-direction: column;
-    align-items: center;
-    gap: var(--wm-leading);
-    font-family: var(--font-brand);
-    font-weight: 400;
-    line-height: 0.75;
-    color: #fff;
-    text-transform: uppercase;
-    white-space: nowrap;
-  }
-
-  .wordmark__line {
-    display: flex;
-  }
-
-  .wordmark__line--primary {
-    gap: var(--wm-track);
-  }
-
-  .wordmark__line--secondary {
-    gap: var(--wm-sub-track);
-    font-size: calc(var(--wm-secondary) * 1em);
-  }
-
-  .wordmark__letter {
     display: block;
+    width: 4.32em;
+    height: auto;
+    overflow: visible;
+    color: #fff;
   }
 
   /* Official logo (header, footer): same footprint as the typeset wordmark
@@ -229,21 +200,20 @@
   }
 
   .wordmark--nav {
-    font-size: 15px; /* sized up so the 42% CUSTOMS subtitle stays legible */
+    font-size: 1.625rem; /* ≈112px wide, 19.5px cap */
   }
 
   /*
-   * Intro: lockup width = MANSOR advance 6.68em + 5 × 0.62em tracking
-   * = 9.78em (sized as before, so the letters keep their scale). Width-bound on phones (~84vw);
-   * height-bound elsewhere (MANSOR cap ≈ 3vh).
+   * Intro: the mark is 4.32em wide. Height-bound on most screens (cap ≈ 5.3vh),
+   * width-bound on narrow phones (at most 72vw wide).
    */
   .wordmark--intro {
-    font-size: min(4vh, calc(84vw / 11.68));
+    font-size: min(7vh, calc(72vw / 4.32));
   }
 
   @media (min-width: 768px) {
     .wordmark--nav {
-      font-size: 16px;
+      font-size: 1.75rem; /* ≈121px wide */
     }
   }
 
@@ -867,7 +837,7 @@
   }
 
   .wordmark--footer {
-    font-size: 18px;
+    font-size: 2.125rem; /* ≈147px wide */
   }
 
   .footer__rule {
@@ -990,7 +960,7 @@
 
   @media (min-width: 768px) {
     .wordmark--footer {
-      font-size: 21px;
+      font-size: 2.5rem; /* ≈173px wide */
     }
   }
 
@@ -3017,7 +2987,7 @@
   }
 
   .wordmark--avatar {
-    font-size: calc(var(--avatar) * 0.075);
+    font-size: calc(var(--avatar) * 0.12); /* mark ≈ 52% of the disc, as in the client's avatar */
   }
 
   .instagram__handle {
@@ -3350,8 +3320,8 @@
    */
   .intro__lockup {
     display: flex; /* no line box: the lockup is exactly the wordmark's height */
-    --rule-length: 2.2em;
-    --rule-distance: 1.5em; /* from the letters themselves now there's no frame */
+    --rule-length: 1.25em;
+    --rule-distance: 0.85em; /* from the mark itself */
     position: relative;
   }
 

@@ -9,7 +9,7 @@ import { getStore } from '@netlify/blobs'
  *   INSTAGRAM_APP_ID          Instagram app ID (Meta App Dashboard › Instagram › API setup)
  *   INSTAGRAM_APP_SECRET      Instagram app secret (same page). Secret.
  *   INSTAGRAM_CONNECT_KEY     Long random string; guards the connect/status URLs. Secret.
- *   INSTAGRAM_USERNAME        Account allowed to connect (PLACEHOLDER default: handle.tbc; set INSTAGRAM_USERNAME)
+ *   INSTAGRAM_USERNAME        Account allowed to connect (default: priveauto)
  *   INSTAGRAM_REDIRECT_URI    Optional; defaults to $URL/api/instagram-auth/callback.
  *                             Must exactly match a "Valid OAuth Redirect URI" in the app.
  *   INSTAGRAM_ACCESS_TOKEN    Optional manual seed (a long-lived token from the dashboard)
@@ -30,7 +30,7 @@ export const REFRESH_AFTER = 7 * 24 * 60 * 60 * 1000
 
 export const store = () => getStore({ name: 'instagram', consistency: 'strong' })
 export const env = (k: string) => process.env[k]?.trim() || undefined
-export const expectedUsername = () => (env('INSTAGRAM_USERNAME') ?? 'handle.tbc').toLowerCase()
+export const expectedUsername = () => (env('INSTAGRAM_USERNAME') ?? 'priveauto').toLowerCase()
 
 export type Reel = {
   id: string

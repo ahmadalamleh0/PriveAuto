@@ -1,9 +1,8 @@
 import { Wordmark } from '@/components/brand/Wordmark'
 
 /**
- * PLACEHOLDER brand logo for the header and footer: the typeset Privé Auto
- * wordmark (site.wordmark), set at the `.wordmark--nav` / `.wordmark--footer`
- * sizes. Swap in the official logo files here once Privé Auto supplies them.
+ * The PRIVÉ logo in the header and footer, set at the `.wordmark--nav` /
+ * `.wordmark--footer` sizes (vector redraw: components/brand/Wordmark.tsx).
  */
 export function BrandLogo({ variant }: { variant: 'nav' | 'footer' }) {
   return <Wordmark className={`wordmark--${variant}`} />
