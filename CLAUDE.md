@@ -1,0 +1,44 @@
+# Privé Auto — website
+
+Client: **Privé Auto** (spelled with the accent in visible branding). Business details are not supplied yet; see README-PRIVE.md for every placeholder.
+Studio: **theDiablo**. Duplicated on 2026-11-09 from the Mansor Customs site (a separate project and repo). The design is frozen: rebrand and replace content only.
+
+**Status:** homepage in progress: intro, hero (pending its banner redesign), editorial section, services and footer. The creative director supplies references and section briefs. Follow them rather than inventing new visual directions.
+
+**Design system and process:** [DESIGN.md](DESIGN.md) holds the tokens, the visual rules, the motion principles, the approved-reference register and the mandatory design-verification workflow. Read it before visually significant work.
+
+## Design standards
+- The creative director owns the concept. Implement their direction precisely. Where the brief is silent, make deliberate choices that fit the Privé Auto brand, and say what you chose.
+- No generic templates, no stock AI layouts (centered hero + three cards + CTA band), no repeated section patterns.
+- This site deliberately keeps the Mansor Customs build's design (client's request, 2026-11-09). Don't pull in looks from other studio sites (Diablo, Vyper, Black Star, Wraptors, IronOak).
+- Every section needs a clear compositional idea: deliberate typography, scale contrast, spacing rhythm and hierarchy.
+- Cinematic but usable. Motion supports the content; navigation, legibility and CTAs always work.
+- Use the `frontend-design` skill for new visual work and `web-design-guidelines` for UI/UX/accessibility reviews.
+- Design-craft tools (see DESIGN.md → Workflow for when to use each): `/impeccable critique|audit|polish` (project-scoped plugin; its detector hook runs in quiet mode), `emil-design-eng` for motion and interaction craft, `/review-animations` for motion reviews, and `ui-ux-pro-max` for research only, never over approved references.
+
+## Motion (GSAP)
+- Use the `gsap-*` skills, and check APIs with Context7 when you're unsure.
+- Register plugins once. Keep each section's timelines in its own module or scope.
+- Always clean up: `gsap.context()` / `useGSAP` with revert on unmount. Kill ScrollTriggers you create.
+- Responsive motion goes through `gsap.matchMedia()`, including a `(prefers-reduced-motion: reduce)` branch that shows final states without movement.
+- Animate transforms and opacity only. Avoid layout-thrashing properties. Call `ScrollTrigger.refresh()` after media or fonts change the layout.
+- Pinned sections must not cause horizontal overflow or layout jumps on mobile.
+
+## Performance
+- Compress and size images properly (AVIF/WebP with fallbacks, explicit dimensions, lazy-load below the fold).
+- Hero video: compressed, muted, `playsinline`, with a poster frame and a lighter mobile source.
+- Preload only the critical fonts. Watch mobile frame rate on scroll-heavy sections.
+
+## Editing workflow
+1. Make sure you understand exactly what's being asked.
+2. Read the relevant code.
+3. Pick the cleanest approach.
+4. Change only what was requested.
+5. Run build/lint checks.
+6. Verify in the browser with Playwright at 1440 / 834 / 390: layout, overflow (`scrollWidth > innerWidth`), animation start and end states, console errors.
+7. For visually significant work, also run the reference comparison and critique steps in DESIGN.md → Workflow.
+8. Briefly say what changed.
+
+## Git
+- This folder is its own git repo, separate from the home-directory repo. Commit at stable milestones.
+- Keep client assets that are huge or licensed out of git when it makes sense (see .gitignore). Never commit `.env*`.

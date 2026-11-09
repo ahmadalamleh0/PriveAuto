@@ -1,0 +1,24 @@
+node_modules/
+dist/
+.vite/
+*.log
+.env
+.env.*
+!.env.example
+.DS_Store
+Thumbs.db
+.playwright-mcp/
+.claude/settings.local.json
+
+# Third-party reference material (not shipped, not versioned)
+references/
+
+# Impeccable: machine-local config and caches
+.impeccable/config.local.json
+.impeccable/*.cache.json
+
+# Original client photographs (web-optimised copies live in src/assets/images)
+client-photos/
+
+# Original Reel exports from the client (web copies live in src/assets/reels)
+Mansor Reels/
