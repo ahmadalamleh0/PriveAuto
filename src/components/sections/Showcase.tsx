@@ -52,7 +52,7 @@ function LogoList({ brands, duplicate = false }: { brands: Brand[]; duplicate?: 
                 alt={hidden ? '' : brand.name}
                 loading="lazy"
                 decoding="async"
-                className={`showcase__logo ${brand.logo.prepared ? '' : 'showcase__logo--filter'} ${brand.logo.tall ? 'showcase__logo--tall' : ''} ${brand.logo.color ? 'showcase__logo--color' : ''} ${brand.logo.stacked ? 'showcase__logo--stacked' : ''}`}
+                className={`showcase__logo ${brand.logo.prepared ? '' : 'showcase__logo--filter'} ${brand.logo.tall ? 'showcase__logo--tall' : ''} ${brand.logo.color ? 'showcase__logo--color' : ''} ${brand.logo.stacked ? 'showcase__logo--stacked' : ''} ${brand.logo.wide ? 'showcase__logo--wide' : ''}`}
               />
             ) : (
               <span className="showcase__name">{brand.name}</span>

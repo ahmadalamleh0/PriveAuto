@@ -1,14 +1,17 @@
+import limitedSpec from '@/assets/logos/limited-spec.png'
+import mansory from '@/assets/logos/mansory.png'
+import strasseForged from '@/assets/logos/strasse-forged.png'
 
 /**
  * Brand banner below the hero: brands genuinely associated with the business.
  * Only `status: 'confirmed'` brands are shown.
  *
- * PLACEHOLDERS: the Mansor Customs build's partner brands were removed (they
- * were that shop's associations). Add Privé Auto's confirmed brands; their
- * official logos can go back in via `logo`. Logo files from the old strip
- * remain in assets/logos/.
+ * Privé Auto's brands, supplied by the client (2026-11-09): Mansory, Limited
+ * Spec Automotive and Strasse Forged. Logos are the client's files, cut onto
+ * transparency for the dark strip (originals in ~/Downloads). Logo files
+ * from the Mansor build's strip remain unused in assets/logos/.
  *
- *   confirmed: independently confirmed by the creative director (2026-10-11)
+ *   confirmed: supplied or confirmed by the client
  *   pending:   publicly mentioned; awaiting client
  *              approval. Never shown, and never captioned as a partner.
  *
@@ -27,16 +30,32 @@ export type Brand = {
   /** `tall`: a two-line lockup, set a little taller so its small line stays legible */
   /** `color`: keep the logo's own colours at full strength (not dimmed to the strip's grey) */
   /** `stacked`: an emblem-over-name lockup (~2:1), set taller again */
-  logo?: { src: string; prepared?: boolean; tall?: boolean; stacked?: boolean; color?: boolean }
+  /** `wide`: a very wide lockup (~10:1), allowed more width so it isn't shrunk to a sliver */
+  logo?: { src: string; prepared?: boolean; tall?: boolean; stacked?: boolean; color?: boolean; wide?: boolean }
 }
 
 export const brands: Brand[] = [
-  { name: 'Partner 01', status: 'confirmed', relation: 'PLACEHOLDER: replace with a confirmed brand' },
-  { name: 'Partner 02', status: 'confirmed', relation: 'PLACEHOLDER: replace with a confirmed brand' },
-  { name: 'Partner 03', status: 'confirmed', relation: 'PLACEHOLDER: replace with a confirmed brand' },
-  { name: 'Partner 04', status: 'confirmed', relation: 'PLACEHOLDER: replace with a confirmed brand' },
-  { name: 'Partner 05', status: 'confirmed', relation: 'PLACEHOLDER: replace with a confirmed brand' },
-  { name: 'Partner 06', status: 'confirmed', relation: 'PLACEHOLDER: replace with a confirmed brand' },
+  {
+    name: 'Mansory',
+    status: 'confirmed',
+    relation: 'Supplied by the client as a brand Privé Auto works with (2026-11-09)',
+    // White on transparency, cut from MANSORY_Logo.svg.webp. Already light: no filter.
+    logo: { src: mansory, prepared: true, wide: true },
+  },
+  {
+    name: 'Limited Spec Automotive',
+    status: 'confirmed',
+    relation: 'Supplied by the client as a brand Privé Auto works with (2026-11-09)',
+    // Cut off its black square; its red, white and grey are kept
+    logo: { src: limitedSpec, prepared: true, tall: true, color: true },
+  },
+  {
+    name: 'Strasse Forged',
+    status: 'confirmed',
+    relation: 'Supplied by the client as a brand Privé Auto works with (2026-11-09)',
+    // The SF shield, cut off its white background; its silver is kept
+    logo: { src: strasseForged, prepared: true, stacked: true, color: true },
+  },
 ]
 
 export const shownBrands = brands.filter((b) => b.status === 'confirmed')

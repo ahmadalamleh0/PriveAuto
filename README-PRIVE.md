@@ -10,13 +10,13 @@ Privé Auto's business has been invented.
 - Logo: PRIVÉ redrawn as SVG from the client's logo (`components/brand/Wordmark.tsx`): intro, header, footer, Instagram avatar, icons and share image.
 - Instagram: @priveauto (profile, message, Reels links; API default account).
 - Reviews: five genuine Google reviews (star ratings still to supply).
+- Brand strip: Mansory, Limited Spec Automotive, Strasse Forged (client-supplied logos).
 
 ## Placeholders to fill (visible on the site)
 
 | What | Where | Current placeholder |
 |---|---|---|
 | Address | `site.location` in `src/data/site.ts` | "Address to be confirmed" (lat/lng 0, 0) |
-| Partner brand strip | `src/data/banner.ts` | "Partner 01–06" |
 | Production URL | `vite.config.ts` (or env `SITE_URL`) | `https://prive-auto.example` |
 | Contact, booking | `site.contact`, `site.hero.cta` | Unset (Coming Soon dialog), as before |
 

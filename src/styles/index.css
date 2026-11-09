@@ -589,6 +589,12 @@
     max-width: 7rem;
   }
 
+  /* Very wide lockups (Mansory with its wing lines, ~10:1): more room, so
+     the lettering keeps a legible height */
+  .showcase__logo--wide {
+    max-width: 15rem;
+  }
+
   /* Two-line lockups (Stage 4: S4T over STAGE 4 TUNING) */
   .showcase__logo--tall {
     height: clamp(1.75rem, 1.4rem + 1vw, 2.375rem);
