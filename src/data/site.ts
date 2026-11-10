@@ -23,8 +23,6 @@ import carMobileOff1008Webp from '@/assets/images/philosophy/supercar-mobile-off
 import heroPhoto from '@/assets/images/hero/phantom-lineup.jpg'
 import heroPoster from '@/assets/videos/hero-poster.jpg'
 import heroMobile from '@/assets/videos/hero-mobile.mp4'
-import heroR8Mobile from '@/assets/videos/hero-r8-mobile.mp4'
-import heroR8 from '@/assets/videos/hero-r8.mp4'
 import heroVideo from '@/assets/videos/hero.mp4'
 import type { MediaAsset } from './media'
 import type { Reel } from './reels'
@@ -74,7 +72,11 @@ export const site = {
     // phones the centre 608×1080 strip (CRF 24/25, no audio). The Mansor
     // studio film is still in assets/videos (hero-studio.mp4 /
     // hero-studio-mobile.mp4): import those here to switch back.
-    video: { src: heroR8, mobileSrc: heroR8Mobile },
+    // OFF for now (client, 2026-11-10): the photo alone until Privé Auto's own
+    // hero film arrives. To bring a film back, import it and set
+    // { src, mobileSrc }, e.g. the R8 cut in assets/videos/hero-r8.mp4 /
+    // hero-r8-mobile.mp4.
+    video: null as { src: string; mobileSrc?: string } | null,
     film: {
       type: 'video',
       src: heroVideo,
