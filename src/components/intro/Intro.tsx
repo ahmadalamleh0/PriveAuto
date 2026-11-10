@@ -9,6 +9,22 @@ const FONT_WAIT_MS = 1200
 const INTRO_LINES = ['PRIVÉ', 'AUTO']
 
 /**
+ * PRIVÉ's R in the logo's form (creative director, 2026-11-10): no stem, the
+ * bowl's bars run back to the left edge, a diagonal leg. Drawn at Michroma's
+ * metrics so it sets like the typed letters: cap height 0.75em (= 100 units),
+ * advance 1.019em, ink from 0.094em to 0.938em, bars 11.5 and verticals 12.6
+ * units thick, as Michroma's own strokes.
+ */
+function LogoR() {
+  return (
+    <svg viewBox="-12.5 0 135.9 100" fill="currentColor" className="intro-wm__glyph">
+      <path d="M0 0H95A14 14 0 0 1 109 14V46A14 14 0 0 1 95 60H0V48.5H93.4A3 3 0 0 0 96.4 45.5V14.5A3 3 0 0 0 93.4 11.5H0Z" />
+      <path d="M52.4 50H69.1L112.5 100H95.8Z" />
+    </svg>
+  )
+}
+
+/**
  * Opening intro: black screen → signature rules → letter-by-letter stacked
  * wordmark → a brief hold → black curtain lifts to reveal the hero,
  * which is already rendered underneath. One GSAP timeline drives the whole sequence, including the hero
@@ -89,7 +105,7 @@ export function Intro({ onComplete }: { onComplete: () => void }) {
               <span key={line} aria-hidden="true" className={i === 0 ? 'intro-wm__primary' : 'intro-wm__secondary'}>
                 {[...line].map((char, j) => (
                   <span key={j} data-wm-letter className="intro-wm__letter">
-                    {char}
+                    {i === 0 && char === 'R' ? <LogoR /> : char}
                   </span>
                 ))}
               </span>

@@ -3365,6 +3365,17 @@
     display: block;
   }
 
+  /* The logo-form R (Intro.tsx › LogoR): Michroma's R box. With line-height
+     0.75 Michroma's caps sit 0.07em below the letter box's top, so the
+     glyph is nudged down to share their baseline. */
+  .intro-wm__glyph {
+    display: block;
+    position: relative;
+    top: 0.07em;
+    width: 1.019em;
+    height: 0.75em;
+  }
+
   .intro__rule {
     position: absolute;
     left: 50%;

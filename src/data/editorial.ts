@@ -1,11 +1,11 @@
-import bespokeInteriors from '@/assets/images/services/bespoke-interiors.jpg'
+import bespokeInteriors from '@/assets/images/services/interior-rolls-royce.jpg'
 import bodyKits from '@/assets/images/services/body-kits.jpg'
-import protectionFinish from '@/assets/images/services/protection-finish.jpg'
+import protectionFinish from '@/assets/images/services/protection-porsche-ppf.jpg'
 import starlight from '@/assets/images/services/starlight.jpg'
 import steeringWheels from '@/assets/images/services/steering-wheels.jpg'
 import tuning from '@/assets/images/services/tuning.jpg'
-import wheelsSuspension from '@/assets/images/services/wheels-suspension.jpg'
-import wraps from '@/assets/images/services/wraps.jpg'
+import wheelsSuspension from '@/assets/images/services/porsche-wheel.jpg'
+import wraps from '@/assets/images/services/wraps-mclaren.jpg'
 import type { MediaAsset } from './media'
 
 /**
@@ -30,10 +30,10 @@ export const editorial = {
       media: {
         type: 'image',
         src: wraps,
-        alt: 'McLaren from above in a colour-shift wrap, purple to blue across the bonnet',
-        width: 1600,
-        height: 1800,
-        position: '50% 50%', // zoomed out (concrete extended) so the title sits below the splitter
+        alt: 'Satin black McLaren 720S with its dihedral doors open in a white studio',
+        width: 750,
+        height: 999,
+        position: '50% 50%', // client photo (2026-11-10): doors up, title on the dark floor
       },
     },
     {
@@ -42,10 +42,10 @@ export const editorial = {
       media: {
         type: 'image',
         src: bespokeInteriors,
-        alt: 'Mercedes G-Class interior fully trimmed in turquoise with diamond-quilted seats',
-        width: 941,
-        height: 1672,
-        position: '50% 55%', // steering wheel and dash above, quilted seat below
+        alt: 'Rolls-Royce rear cabin trimmed in turquoise leather under a starlight headliner, seen through the open rear door',
+        width: 750,
+        height: 938,
+        position: '50% 50%', // client photo (2026-11-10): starlight headliner above, rear bench below
       },
     },
     {
@@ -89,10 +89,10 @@ export const editorial = {
       media: {
         type: 'image',
         src: protectionFinish,
-        alt: 'Two-tone silver and blue Audi R8 in profile',
-        width: 640,
-        height: 853,
-        position: '50% 100%', // car above the title, which sits on the asphalt
+        alt: 'Privé Auto technicians fitting paint protection film to a satin black Porsche 911 GT3 RS in the studio',
+        width: 750,
+        height: 938,
+        position: '50% 50%', // client photo (2026-11-10): the team at work on the front wing, title on the floor
       },
     },
     {
@@ -113,10 +113,10 @@ export const editorial = {
       media: {
         type: 'image',
         src: wheelsSuspension,
-        alt: 'Black SUV in profile on polished multi-spoke wheels',
-        width: 1200,
-        height: 1200,
-        position: '43% 62%',
+        alt: 'White Porsche 911 Turbo Cabriolet on a rooftop with a city skyline behind, rear quarter on a polished lattice-spoke forged wheel',
+        width: 1000,
+        height: 1250,
+        position: '50% 62%', // client photo (2026-11-10): the rear wheel centred, title on the shadowed tarmac
       },
     },
     {

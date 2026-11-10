@@ -1,7 +1,9 @@
-import reelBmwPoster from '@/assets/reels/bmw-owners.jpg'
-import reelBmw from '@/assets/reels/bmw-owners.mp4'
-import reelLamboPoster from '@/assets/reels/camo-lamborghini.jpg'
-import reelLambo from '@/assets/reels/camo-lamborghini.mp4'
+import reelBmwPoster from '@/assets/reels/blue-bmw.jpg'
+import reelBmw from '@/assets/reels/blue-bmw.mp4'
+import reelFerrariPoster from '@/assets/reels/black-ferrari.jpg'
+import reelFerrari from '@/assets/reels/black-ferrari.mp4'
+import reelUrusPoster from '@/assets/reels/red-urus.jpg'
+import reelUrus from '@/assets/reels/red-urus.mp4'
 import carDesktopOn1600 from '@/assets/images/philosophy/supercar-desktop-on-1600.jpg'
 import carDesktopOn1600Webp from '@/assets/images/philosophy/supercar-desktop-on-1600.webp'
 import carDesktopOn2016 from '@/assets/images/philosophy/supercar-desktop-on-2016.jpg'
@@ -18,9 +20,7 @@ import carMobileOff800 from '@/assets/images/philosophy/supercar-mobile-off-800.
 import carMobileOff800Webp from '@/assets/images/philosophy/supercar-mobile-off-800.webp'
 import carMobileOff1008 from '@/assets/images/philosophy/supercar-mobile-off-1008.jpg'
 import carMobileOff1008Webp from '@/assets/images/philosophy/supercar-mobile-off-1008.webp'
-import reelMercedesPoster from '@/assets/reels/red-mercedes.jpg'
-import reelMercedes from '@/assets/reels/red-mercedes.mp4'
-import heroShopfront from '@/assets/images/hero/shopfront-twilight.jpg'
+import heroPhoto from '@/assets/images/hero/phantom-lineup.jpg'
 import heroPoster from '@/assets/videos/hero-poster.jpg'
 import heroMobile from '@/assets/videos/hero-mobile.mp4'
 import heroR8Mobile from '@/assets/videos/hero-r8-mobile.mp4'
@@ -48,14 +48,14 @@ export const site = {
   // copy, sentence case, two lines at every width (creative director,
   // 2026-10-15): "Experience your car's" / "full potential."
   hero: {
-    // PLACEHOLDER IMAGE, carried over from the Mansor Customs build: it shows
-    // that shop's lit sign. Replace with a Privé Auto photo before launch.
+    // Client photo (2026-11-10): five Rolls-Royce Phantoms lined up on the
+    // grass by a lake. Story screenshot, its rounded corners trimmed.
     media: {
       type: 'image',
-      src: heroShopfront,
-      alt: 'A shopfront at twilight with a Ferrari, a Rolls-Royce and a Mercedes G-Class parked out front',
-      width: 941,
-      height: 1672,
+      src: heroPhoto,
+      alt: 'Five customised Rolls-Royce Phantoms in black, white and grey lined up on the grass beside a lake under a cloudy sky',
+      width: 1122,
+      height: 2020,
       // Framing lives in CSS (.hero__media img): it changes with the screen's shape
     } as MediaAsset,
     // Client brand film, HQ master (client-photos/banner1-hq.mp4, 2026-10-13),
@@ -115,15 +115,15 @@ export const site = {
     followers: null as string | null,
     verified: null as boolean | null,
     reelsUrl: 'https://www.instagram.com/priveauto/reels/',
-    // PLACEHOLDER FOOTAGE: three Reels carried over from the Mansor Customs
-    // build (web copies: 540×960, muted, H.264). Replace with Privé Auto's. No
+    // Privé Auto's own Reels, supplied by the client (2026-11-10; web copies:
+    // 540×960, muted, H.264). No
     // individual permalinks yet, so each card links to the Reels tab; add a
     // reel's URL as `permalink` to link it directly. Once the Instagram API
     // is connected (docs/INSTAGRAM.md), its live feed replaces these.
     reels: [
-      { id: 'bmw-owners', video: reelBmw, poster: reelBmwPoster, permalink: null, caption: 'Placeholder reel: paint protection on a BMW' },
-      { id: 'red-mercedes', video: reelMercedes, poster: reelMercedesPoster, permalink: null, caption: 'Placeholder reel: a red Mercedes in the studio' },
-      { id: 'camo-lamborghini', video: reelLambo, poster: reelLamboPoster, permalink: null, caption: 'Placeholder reel: a camo-wrapped Lamborghini' },
+      { id: 'blue-bmw', video: reelBmw, poster: reelBmwPoster, permalink: null, caption: 'Detail film: a BMW in sky blue' },
+      { id: 'black-ferrari', video: reelFerrari, poster: reelFerrariPoster, permalink: null, caption: 'A black Ferrari rolls out of the Privé Auto garage' },
+      { id: 'red-urus', video: reelUrus, poster: reelUrusPoster, permalink: null, caption: 'A red Lamborghini Urus with a widebody kit on the rooftop' },
     ] as Reel[],
   },
 
