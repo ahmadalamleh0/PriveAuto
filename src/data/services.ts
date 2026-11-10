@@ -15,7 +15,7 @@ export type ServicePage = EditorialCard & {
 
 const DEFAULT_LINE = 'We are preparing this page with the same care we give every build.'
 
-export const services: ServicePage[] = [...editorial.upper, ...editorial.lower, ...editorial.closing, ...editorial.unlisted].map((card) => ({
+export const services: ServicePage[] = [...editorial.upper, ...editorial.lower,...editorial.unlisted].map((card) => ({
   ...card,
   slug: card.id,
   line: DEFAULT_LINE,

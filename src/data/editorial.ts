@@ -1,5 +1,5 @@
 import bespokeInteriors from '@/assets/images/services/interior-rolls-royce.jpg'
-import bodyKits from '@/assets/images/services/body-kits.jpg'
+import bodyKits from '@/assets/images/services/body-kits-cullinan.jpg'
 import protectionFinish from '@/assets/images/services/protection-porsche-ppf.jpg'
 import starlight from '@/assets/images/services/starlight.jpg'
 import steeringWheels from '@/assets/images/services/steering-wheels.jpg'
@@ -37,15 +37,15 @@ export const editorial = {
       },
     },
     {
-      id: 'protection-finish',
-      title: 'Paint Protection Film',
+      id: 'wheels-suspension',
+      title: 'Wheels & Tires',
       media: {
         type: 'image',
-        src: protectionFinish,
-        alt: 'Privé Auto technicians fitting paint protection film to a satin black Porsche 911 GT3 RS in the studio',
-        width: 750,
-        height: 938,
-        position: '50% 50%', // client photo (2026-11-10): the team at work on the front wing, title on the floor
+        src: wheelsSuspension,
+        alt: 'White Porsche 911 Turbo Cabriolet on a rooftop with a city skyline behind, rear quarter on a polished lattice-spoke forged wheel',
+        width: 1000,
+        height: 1250,
+        position: '50% 62%', // client photo (2026-11-10): the rear wheel centred, title on the shadowed tarmac
       },
     },
     {
@@ -54,10 +54,10 @@ export const editorial = {
       media: {
         type: 'image',
         src: bodyKits,
-        alt: 'Yellow widebody Jeep Grand Cherokee Trackhawk with a carbon bonnet and black wheels at a gas station at night',
-        width: 1152,
-        height: 1360,
-        position: '50% 50%', // zoomed out (canopy trimmed, forecourt extended): title sits below the splitter
+        alt: 'Matte black Rolls-Royce Cullinan with teal pinstripes and a forged black wheel, front quarter against tropical palms',
+        width: 720,
+        height: 960,
+        position: '50% 50%', // client photo (2026-11-10): the wheel arch centred, title on the gravel
       },
     },
   ] satisfies [EditorialCard, EditorialCard, EditorialCard],
@@ -84,28 +84,18 @@ export const editorial = {
       },
     },
     {
-      id: 'wheels-suspension',
-      title: 'Wheels & Tires',
+      id: 'protection-finish',
+      title: 'Paint Protection Film',
       media: {
         type: 'image',
-        src: wheelsSuspension,
-        alt: 'White Porsche 911 Turbo Cabriolet on a rooftop with a city skyline behind, rear quarter on a polished lattice-spoke forged wheel',
-        width: 1000,
-        height: 1250,
-        position: '50% 62%', // client photo (2026-11-10): the rear wheel centred, title on the shadowed tarmac
+        src: protectionFinish,
+        alt: 'Privé Auto technicians fitting paint protection film to a satin black Porsche 911 GT3 RS in the studio',
+        width: 750,
+        height: 938,
+        position: '50% 50%', // client photo (2026-11-10): the team at work on the front wing, title on the floor
       },
     },
   ] satisfies [EditorialCard, EditorialCard],
-
-  // One card on its own row under `lower`, centred at the same size
-  // (creative director, 2026-11-10). PLACEHOLDER: no photo supplied yet, so
-  // the card shows the neutral placeholder; add `media` when it arrives.
-  closing: [
-    {
-      id: 'ceramic-coating',
-      title: 'Ceramic Coating',
-    },
-  ] satisfies [EditorialCard],
 
   // Services without a card since the five-card layout (2026-11-10). Their
   // pages stay live: the footer still links Tuning and Ambient Lighting here,

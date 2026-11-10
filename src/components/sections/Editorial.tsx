@@ -16,7 +16,7 @@ import { handleLinkClick } from '@/lib/router'
  */
 export function Editorial() {
   const scope = useRef<HTMLElement>(null)
-  const { upper, statement, lower, closing } = editorial
+  const { upper, statement, lower } = editorial
 
   useGSAP(() => editorialReveal(), { scope })
 
@@ -36,7 +36,7 @@ export function Editorial() {
           <p className="statement__body">{withEmphasis(statement.body)}</p>
         </div>
 
-        <Collage rows={[lower, closing]} />
+        <Collage rows={[lower]} />
       </div>
     </section>
   )
