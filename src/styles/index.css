@@ -210,13 +210,17 @@
   }
 
   /*
-   * Service card grid: two columns of identical portrait cards (Motorcarlease
-   * reference). Cards are ~18% taller than the original square tiles (~20% on
-   * phones) so the photographs have room to breathe. Container query units
-   * keep the gaps proportional at every width.
+   * Service card rows: identical portrait cards (Motorcarlease reference),
+   * ~18% taller than the original square tiles (~20% on phones) so the
+   * photographs have room to breathe. Five services (2026-11-10): three cards,
+   * the statement, then two. Every card is a third of the row (half on
+   * phones), and a shorter row centres its cards at that same size, never
+   * stretched. Container query units keep the gaps proportional at every
+   * width. md+ widens the row so the cards keep the two-column size (~390px).
    */
   .collage {
     --collage-gap: 3.6cqi;
+    --collage-cols: 2;
     --tile-ratio: 1 / 1.2; /* width / height */
     container-type: inline-size;
     width: 100%;
@@ -226,26 +230,24 @@
 
   @media (min-width: 768px) {
     .collage {
-      --collage-gap: 3cqi;
+      --collage-gap: 2.6cqi;
+      --collage-cols: 3;
       --tile-ratio: 1 / 1.18;
+      max-width: 75rem;
     }
   }
 
-  .collage__grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    column-gap: var(--collage-gap);
-  }
-
-  .collage__col {
+  .collage__row {
     display: flex;
-    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
     gap: var(--collage-gap);
   }
 
   .collage__card {
     position: relative;
-    width: 100%;
+    flex: none;
+    width: calc((100% - (var(--collage-cols) - 1) * var(--collage-gap)) / var(--collage-cols));
     aspect-ratio: var(--tile-ratio);
     overflow: hidden;
     background: var(--color-surface-raised);

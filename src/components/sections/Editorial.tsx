@@ -2,14 +2,14 @@ import { useRef } from 'react'
 import { editorialReveal } from '@/animations/editorialReveal'
 import { Media } from '@/components/ui/Media'
 import { ChevronIcon } from '@/components/ui/icons'
-import { editorial, type EditorialCard, type EditorialGroup } from '@/data/editorial'
+import { editorial, type EditorialCard } from '@/data/editorial'
 import { servicePath } from '@/data/services'
 import { useGSAP } from '@/lib/gsap'
 import { handleLinkClick } from '@/lib/router'
 
 /**
- * Services showcase after the hero: 4 service cards (offset collage) →
- * centred statement → 4 service cards. Each card is a client photo with a
+ * Services showcase after the hero: 3 service cards → centred statement →
+ * 2 service cards, centred at the same size. Each card is a client photo with a
  * centred title and chevron (Motorcarlease reference) linking to the
  * service's page (/services/:id). Content: data/editorial.ts.
  * Animation hooks: [data-editorial-card], [data-editorial-statement].
@@ -47,19 +47,15 @@ function withEmphasis(text: string) {
   return text.split(/\*(.+?)\*/).map((part, i) => (i % 2 ? <em key={i}>{part}</em> : part))
 }
 
-function Collage({ group }: { group: EditorialGroup }) {
-  const [topLeft, topRight, bottomLeft, bottomRight] = group
+/** One row of cards, each a third of the row wide (half on phones); a short
+ *  row centres its cards at that same size instead of stretching them. */
+function Collage({ group }: { group: EditorialCard[] }) {
   return (
     <div className="collage">
-      <div className="collage__grid">
-        <div className="collage__col">
-          <Card card={topLeft} />
-          <Card card={bottomLeft} />
-        </div>
-        <div className="collage__col">
-          <Card card={topRight} />
-          <Card card={bottomRight} />
-        </div>
+      <div className="collage__row">
+        {group.map((card) => (
+          <Card key={card.id} card={card} />
+        ))}
       </div>
     </div>
   )
