@@ -97,6 +97,16 @@ export const editorial = {
     },
   ] satisfies [EditorialCard, EditorialCard],
 
+  // One card on its own row under `lower`, centred at the same size
+  // (creative director, 2026-11-10). PLACEHOLDER: no photo supplied yet, so
+  // the card shows the neutral placeholder; add `media` when it arrives.
+  closing: [
+    {
+      id: 'ceramic-coating',
+      title: 'Ceramic Coating',
+    },
+  ] satisfies [EditorialCard],
+
   // Services without a card since the five-card layout (2026-11-10). Their
   // pages stay live: the footer still links Tuning and Ambient Lighting here,
   // and the enquiry form still offers them. Remove an entry here only once

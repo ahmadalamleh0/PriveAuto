@@ -16,14 +16,14 @@ import { handleLinkClick } from '@/lib/router'
  */
 export function Editorial() {
   const scope = useRef<HTMLElement>(null)
-  const { upper, statement, lower } = editorial
+  const { upper, statement, lower, closing } = editorial
 
   useGSAP(() => editorialReveal(), { scope })
 
   return (
     <section ref={scope} id="editorial" aria-labelledby="editorial-title" className="pt-(--section-y)">
       <div className="container-site">
-        <Collage group={upper} />
+        <Collage rows={[upper]} />
 
         <div data-editorial-statement className="statement">
           <h2 id="editorial-title" className="statement__headline">
@@ -36,7 +36,7 @@ export function Editorial() {
           <p className="statement__body">{withEmphasis(statement.body)}</p>
         </div>
 
-        <Collage group={lower} />
+        <Collage rows={[lower, closing]} />
       </div>
     </section>
   )
@@ -47,14 +47,18 @@ function withEmphasis(text: string) {
   return text.split(/\*(.+?)\*/).map((part, i) => (i % 2 ? <em key={i}>{part}</em> : part))
 }
 
-/** One row of cards, each a third of the row wide (half on phones); a short
- *  row centres its cards at that same size instead of stretching them. */
-function Collage({ group }: { group: EditorialCard[] }) {
+/** Rows of cards, each card a third of the row wide (half on phones); a
+ *  short row centres its cards at that same size instead of stretching them. */
+function Collage({ rows }: { rows: EditorialCard[][] }) {
   return (
     <div className="collage">
-      <div className="collage__row">
-        {group.map((card) => (
-          <Card key={card.id} card={card} />
+      <div className="collage__rows">
+        {rows.map((row) => (
+          <div key={row[0].id} className="collage__row">
+            {row.map((card) => (
+              <Card key={card.id} card={card} />
+            ))}
+          </div>
         ))}
       </div>
     </div>
