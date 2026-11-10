@@ -32,6 +32,15 @@ export function Hero() {
       <div data-hero-overlay aria-hidden="true" className="hero__scrim" />
 
       <div data-hero-content className="hero__content container-site">
+        <p data-hero-fade className="hero__eyebrow">
+          {hero.eyebrow.map((part, i) => [
+            i > 0 && <span key={`dot-${part}`} aria-hidden="true" className="hero__dot" />,
+            <span key={part} className="hero__eyebrow-part">
+              {i > 0 && <span className="sr-only">, </span>}
+              {part}
+            </span>,
+          ])}
+        </p>
         <h1 id="hero-title" className="hero__headline">
           {hero.headline.map((row, r) => (
             <span key={r} className="hero__row">

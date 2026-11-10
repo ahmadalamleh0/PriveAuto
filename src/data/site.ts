@@ -83,6 +83,8 @@ export const site = {
       mobileSrc: heroMobile,
       poster: heroPoster,
     } as MediaAsset,
+    // Small location line above the headline (client, 2026-11-10)
+    eyebrow: ['Studio', 'Miami, Florida'],
     headline: [['Experience your car’s'], ['full potential.']],
     // Service categories supplied by the creative director (2026-10-09).
     // Two rows so phones wrap into two balanced lines; one line on md+.

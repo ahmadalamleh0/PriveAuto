@@ -339,6 +339,43 @@
     }
   }
 
+  /* Location line over the headline (2026-11-10): the services' small
+     tracked caps, framed by two short hairlines */
+  .hero__eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.9em;
+    margin-bottom: clamp(0.875rem, 0.6rem + 0.8vw, 1.25rem);
+    font-family: var(--font-editorial);
+    font-size: clamp(0.65625rem, 0.6rem + 0.25vw, 0.78125rem);
+    font-weight: 500;
+    line-height: 1;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    white-space: nowrap;
+    color: rgb(242 241 238 / 0.8);
+    text-shadow: 0 1px 10px rgb(0 0 0 / 0.35);
+  }
+
+  .hero__eyebrow::before,
+  .hero__eyebrow::after {
+    content: '';
+    width: 1.75rem;
+    height: 1px;
+    background: currentColor;
+    opacity: 0.55;
+  }
+
+  /* Each word's trailing tracking would widen the gap after it: cancel it so
+     hairline, words and dot are evenly spaced */
+  .hero__eyebrow-part {
+    margin-right: -0.28em;
+  }
+
+  .hero__eyebrow > .hero__dot {
+    margin: 0;
+  }
+
   /* Refined grotesk (Geist 500, 2026-10-15), sentence case, two balanced
      lines; sized to fit a phone's width, up to 3.75rem */
   .hero__headline {
