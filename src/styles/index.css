@@ -609,11 +609,12 @@
     padding-right: var(--logo-gap); /* equal spacing across the loop seam */
   }
 
+  /* Logos ~25% smaller than first set (client, 2026-11-12) */
   .showcase__logo {
     display: block;
-    height: clamp(1.25rem, 1rem + 0.8vw, 1.75rem);
+    height: clamp(0.9375rem, 0.75rem + 0.6vw, 1.3125rem);
     width: auto;
-    max-width: 9rem;
+    max-width: 6.75rem;
     object-fit: contain;
     opacity: 0.62;
   }
@@ -630,20 +631,20 @@
   /* Stacked emblem + name lockups (Brillsteel, ~2:1) need more height than
      wide lockups to read at the same visual weight */
   .showcase__logo--stacked {
-    height: clamp(2.5rem, 2rem + 1.4vw, 3.375rem);
-    max-width: 7rem;
+    height: clamp(1.875rem, 1.5rem + 1.05vw, 2.5rem);
+    max-width: 5.25rem;
   }
 
   /* Very wide lockups (Mansory with its wing lines, ~10:1): more room, so
      the lettering keeps a legible height */
   .showcase__logo--wide {
-    max-width: 15rem;
+    max-width: 11.25rem;
   }
 
   /* Two-line lockups (Stage 4: S4T over STAGE 4 TUNING) */
   .showcase__logo--tall {
-    height: clamp(1.75rem, 1.4rem + 1vw, 2.375rem);
-    max-width: 8rem;
+    height: clamp(1.3125rem, 1.05rem + 0.75vw, 1.75rem);
+    max-width: 6rem;
   }
 
   /* A confirmed brand without its official logo file yet: its name in plain
