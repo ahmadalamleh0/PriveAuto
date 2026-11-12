@@ -185,7 +185,7 @@ export function BuildDesk() {
               Private Inquiries
             </p>
             <h2 id="build-title" data-bd-reveal className="brand-headline build-brief__title">
-              Let’s Talk Builds.
+              Enquire with Privé
             </h2>
           </header>
 
