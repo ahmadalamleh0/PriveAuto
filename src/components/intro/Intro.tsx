@@ -25,6 +25,23 @@ function LogoR() {
 }
 
 /**
+ * PRIVÉ's É in the logo's form (creative director, 2026-11-12): three bars,
+ * the middle one shorter, no spine, under a short flat slanted accent. Drawn
+ * at Michroma's É metrics, like LogoR: cap height 0.75em (= 100 units),
+ * advance 0.875em, ink from 0.094em to 0.844em, bars 11.5 units thick. The
+ * box runs 50 units above the cap for the accent (Michroma's É reaches
+ * 1.125em), and the extra height is taken back so the line doesn't grow.
+ */
+function LogoE() {
+  return (
+    <svg viewBox="-12.5 -50 116.67 150" fill="currentColor" className="intro-wm__glyph intro-wm__glyph--e">
+      <path d="M0 0H100V11.5H0Z M0 42.25H68V53.75H0Z M0 88.5H100V100H0Z" />
+      <path d="M27 -4H37.5L50 -26H39.5Z" />
+    </svg>
+  )
+}
+
+/**
  * Opening intro: black screen → signature rules → letter-by-letter stacked
  * wordmark → a brief hold → black curtain lifts to reveal the hero,
  * which is already rendered underneath. One GSAP timeline drives the whole sequence, including the hero
@@ -105,7 +122,7 @@ export function Intro({ onComplete }: { onComplete: () => void }) {
               <span key={line} aria-hidden="true" className={i === 0 ? 'intro-wm__primary' : 'intro-wm__secondary'}>
                 {[...line].map((char, j) => (
                   <span key={j} data-wm-letter className="intro-wm__letter">
-                    {i === 0 && char === 'R' ? <LogoR /> : char}
+                    {i === 0 && char === 'R' ? <LogoR /> : i === 0 && char === 'É' ? <LogoE /> : char}
                   </span>
                 ))}
               </span>

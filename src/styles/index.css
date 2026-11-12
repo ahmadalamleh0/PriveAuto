@@ -3589,6 +3589,20 @@
     height: 0.75em;
   }
 
+  /* The logo-form É: Michroma's É box, 0.375em taller for the accent; the
+     negative margin keeps the letter's line box at 0.75em */
+  .intro-wm__glyph--e {
+    width: 0.875em;
+    height: 1.125em;
+    margin-top: -0.375em;
+  }
+
+  /* TRIAL (creative director, 2026-11-12): the two signature lines hidden to
+     see the intro without them. Delete this rule to bring them back. */
+  .intro__rule {
+    display: none;
+  }
+
   .intro__rule {
     position: absolute;
     left: 50%;
