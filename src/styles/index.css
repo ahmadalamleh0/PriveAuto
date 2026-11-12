@@ -1723,11 +1723,12 @@
 
   /*
    * Vehicle selector (2026-11-12, after the Vyper configurator, in Privé's
-   * own terms). Makes: an architectural grid of hairline-divided cells
-   * (the 1px gaps show the line colour behind), 3 across at every width;
-   * phones get square cells and smaller marks.
-   * Logos sit dimmed in paper and come up to full on hover; the chosen make
-   * keeps a hairline frame and a dot when you come back to the grid.
+   * own terms; sizing after the creative director's reference). Makes: a
+   * square-cornered grid of hairline-divided 3:2 cells (the 1px gaps show
+   * the line colour behind), 3 across at every width. Each logo is fitted
+   * into the same box (40% of the cell's width, 58% of its height) at full
+   * brightness; a soft light follows the pointer. The chosen make keeps a
+   * hairline frame and a dot when you come back to the grid.
    */
   .vs-grid {
     display: grid;
@@ -1737,9 +1738,8 @@
     padding: 0;
     overflow: hidden;
     list-style: none;
-    border: 1px solid rgb(255 255 255 / 0.07);
-    border-radius: 12px;
-    background: rgb(255 255 255 / 0.07);
+    border: 1px solid rgb(255 255 255 / 0.09);
+    background: rgb(255 255 255 / 0.08);
   }
 
   .vs-grid__item {
@@ -1748,28 +1748,36 @@
 
   .vs-brand {
     position: relative;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 0.875rem;
+    display: grid;
+    place-items: center;
     width: 100%;
-    aspect-ratio: 4 / 3;
-    padding: 0.75rem;
-    background: #060606;
-    color: var(--color-paper);
+    aspect-ratio: 3 / 2;
+    overflow: hidden;
+    container-type: size;
+    background: #0a0a0a;
+    color: #ececea;
     cursor: pointer;
     transition: background-color 300ms ease;
   }
 
-  /* Every mark is sized in em from its own aspect (BuildDesk › BrandMark) */
+  /* Pointer light: white, soft, only while hovered */
+  .vs-brand::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background: radial-gradient(circle 70cqw at var(--mx, 50%) var(--my, 50%), rgb(242 241 238 / 0.075), transparent 70%);
+    opacity: 0;
+    transition: opacity 400ms ease;
+  }
+
+  /* Fitted in the shared box from its aspect (--a, BuildDesk › BrandMark) */
   .vs-mark {
+    position: relative;
     display: block;
-    flex: none;
-    width: var(--mark-w);
-    height: var(--mark-h);
-    font-size: clamp(1.875rem, 1.5rem + 1.4vw, 2.75rem);
-    opacity: 0.6;
+    width: min(40cqw, calc(58cqh * var(--a, 1)));
+    aspect-ratio: var(--a, 1);
+    opacity: 0.92;
     transition:
       opacity 300ms ease,
       transform 600ms var(--ease-out-expo);
@@ -1785,12 +1793,13 @@
   /* No logo file yet: the name in the brand face, as a placeholder */
   .vs-mark--type {
     width: auto;
-    height: auto;
-    max-width: 100%;
+    max-width: 82cqw;
+    aspect-ratio: auto;
     font-family: var(--font-brand);
-    font-size: clamp(0.625rem, 0.56rem + 0.3vw, 0.75rem);
-    line-height: 1.5;
+    font-size: clamp(0.5rem, 8cqh, 0.6875rem);
+    line-height: 1.45;
     letter-spacing: 0.16em;
+    opacity: 0.7;
     text-align: center;
     text-transform: uppercase;
     text-wrap: balance;
@@ -1798,7 +1807,11 @@
 
   @media (hover: hover) and (pointer: fine) {
     .vs-brand:hover {
-      background: #0c0c0c;
+      background: #0d0d0d;
+    }
+
+    .vs-brand:hover::before {
+      opacity: 1;
     }
 
     .vs-brand:hover .vs-mark {
@@ -1808,7 +1821,7 @@
   }
 
   .vs-brand[aria-pressed='true'] {
-    background: rgb(255 255 255 / 0.03);
+    background: #101010;
     box-shadow: inset 0 0 0 1px rgb(242 241 238 / 0.3);
   }
 
@@ -1819,29 +1832,12 @@
   .vs-brand[aria-pressed='true']::after {
     content: '';
     position: absolute;
-    top: 0.75rem;
-    right: 0.75rem;
+    top: 9cqh;
+    right: 6cqw;
     width: 5px;
     height: 5px;
     border-radius: 50%;
     background: var(--color-paper);
-  }
-
-  @media (max-width: 639px) {
-    .vs-brand {
-      aspect-ratio: 1;
-      padding: 0.5rem;
-    }
-
-    .vs-grid .vs-mark {
-      font-size: 1.625rem;
-    }
-
-    .vs-grid .vs-mark--type {
-      font-size: 0.5625rem;
-      letter-spacing: 0.12em;
-      overflow-wrap: anywhere;
-    }
   }
 
   .vs-brand:focus-visible {
@@ -1858,44 +1854,56 @@
   .vs-summary {
     display: flex;
     align-items: center;
-    gap: 1rem;
-    min-height: 4.25rem;
+    gap: 1.125rem;
+    min-height: 4.75rem;
     margin-bottom: 1rem;
-    padding: 0.625rem 0.625rem 0.625rem 1rem;
+    padding: 0.75rem 0.625rem 0.75rem 1.125rem;
     border: 1px solid rgb(255 255 255 / 0.07);
     border-radius: 12px;
     background: rgb(255 255 255 / 0.015);
   }
 
+  /* The logo alone, fitted in a 6 × 3rem box */
   .vs-chosen__mark,
   .vs-summary__mark {
     display: grid;
     flex: none;
     place-items: center;
-    width: 2.75rem;
-    height: 2.75rem;
+    width: 6rem;
+    height: 3rem;
+    container-type: size;
+    color: #ececea;
+  }
+
+  /* Step 2: the logo alone, centred in its bar */
+  .vs-chosen {
+    justify-content: center;
+    min-height: 5.5rem;
+    padding: 1rem;
+  }
+
+  .vs-chosen__mark {
+    width: 8rem;
+    height: 3.5rem;
+  }
+
+  .vs-summary__mark {
+    width: 4.5rem;
+    height: 2.5rem;
   }
 
   .vs-chosen__mark .vs-mark,
   .vs-summary__mark .vs-mark {
-    font-size: 1.625rem;
+    width: min(100cqw, calc(100cqh * var(--a, 1)));
     opacity: 1;
   }
 
-  /* A placeholder name would only repeat the text beside it */
-  .vs-chosen__mark:has(.vs-mark--type),
-  .vs-summary__mark:has(.vs-mark--type) {
-    display: none;
-  }
-
-  .vs-chosen__text,
   .vs-summary__text {
     display: grid;
     gap: 0.125rem;
     min-width: 0;
   }
 
-  .vs-chosen .bd-sublabel,
   .vs-summary .bd-sublabel {
     margin: 0;
     font-size: 0.75rem;
@@ -1906,6 +1914,13 @@
     font-family: var(--font-editorial);
     font-size: 1.0625rem;
     color: var(--color-paper);
+  }
+
+  .vs-chosen__name {
+    font-family: var(--font-brand);
+    font-size: 0.9375rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
   }
 
   .vs-summary__edit {

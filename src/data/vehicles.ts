@@ -1,16 +1,19 @@
 import audiLogo from '@/assets/brands/audi.svg?raw'
 import bmwLogo from '@/assets/brands/bmw.svg?raw'
+import ferrariLogo from '@/assets/brands/ferrari.svg?raw'
 import lamborghiniLogo from '@/assets/brands/lamborghini.svg?raw'
 import mclarenLogo from '@/assets/brands/mclaren.svg?raw'
 import mercedesLogo from '@/assets/brands/mercedes-benz.svg?raw'
 import porscheLogo from '@/assets/brands/porsche.svg?raw'
+import rangeRoverLogo from '@/assets/brands/range-rover.svg?raw'
 
 /**
  * Vehicle selector data for the quote brief: the 12 manufacturers shown in
  * the brand grid, in grid order, each with its own models. These are vehicle
  * options for the customer, not claims of partnership or affiliation.
  *
- * Logos (src/assets/brands): the client's SVGs (from /SVG), cleaned for the
+ * Logos (src/assets/brands): the client's SVGs (from /SVG and, for Ferrari
+ * and Range Rover, the studio's Downloads), cleaned for the
  * web: fills removed so they take the text colour, and each viewBox cropped
  * to the drawing so wide and tall marks can be optically balanced. A brand
  * with `logo: null` shows its name as a typographic placeholder. To add a
@@ -43,7 +46,8 @@ export const BRANDS: VehicleBrand[] = [
   {
     id: 'ferrari',
     name: 'Ferrari',
-    logo: null,
+    logo: ferrariLogo,
+    aspect: 0.705,
     models: m('12Cilindri', '296 GTB', '296 GTS', 'SF90 Stradale', 'SF90 Spider', 'Purosangue', 'Roma', 'Roma Spider', '812 Superfast', '812 GTS', 'F8 Tributo', 'F8 Spider', 'Portofino M', '488 Pista', '488 GTB', 'LaFerrari', 'Daytona SP3'),
   },
   {
@@ -115,7 +119,8 @@ export const BRANDS: VehicleBrand[] = [
   {
     id: 'range-rover',
     name: 'Range Rover',
-    logo: null,
+    logo: rangeRoverLogo,
+    aspect: 3.686,
     models: m('Range Rover', 'Range Rover SV', 'Range Rover Sport', 'Range Rover Sport SV', 'Range Rover Velar', 'Range Rover Evoque'),
   },
 ]

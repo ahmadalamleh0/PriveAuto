@@ -1,4 +1,4 @@
-import { useEffect, useId, useRef, useState, type CSSProperties, type FormEvent, type KeyboardEvent, type ReactNode } from 'react'
+import { useEffect, useId, useRef, useState, type CSSProperties, type FormEvent, type KeyboardEvent, type PointerEvent, type ReactNode } from 'react'
 import { buildDeskReveal, stepIn } from '@/animations/buildDeskReveal'
 import { ArrowIcon } from '@/components/ui/icons'
 import { editorial } from '@/data/editorial'
@@ -87,6 +87,8 @@ export function BuildDesk() {
   const brand = findBrand(form.brand)
   const model = brand?.models.find((m) => m.name === form.model)
   const vehicle = [form.year, brand?.name, finalModel(form)].filter(Boolean).join(' ')
+  // Beside a logo the make's name would repeat it
+  const vehicleShort = brand?.logo ? [form.year, finalModel(form)].filter(Boolean).join(' ') : vehicle
 
   const set = <K extends keyof Form>(k: K, v: Form[K]) => {
     setForm((f) => ({ ...f, [k]: v }))
@@ -231,6 +233,7 @@ export function BuildDesk() {
                               data-field={i === 0 ? 'brand' : undefined}
                               aria-pressed={form.brand === b.id}
                               onClick={() => chooseBrand(b.id)}
+                              onPointerMove={spotlight}
                             >
                               <BrandMark brand={b} />
                               {/* A logo stands alone; its name is for screen readers only */}
@@ -245,14 +248,15 @@ export function BuildDesk() {
 
                   {step === 1 && brand && (
                     <StepHead title={STEPS[1]}>
+                      {/* The chosen make: its logo alone, or its name until a logo arrives */}
                       <div className="vs-chosen">
-                        <span className="vs-chosen__mark">
-                          <BrandMark brand={brand} />
-                        </span>
-                        <span className="vs-chosen__text">
-                          <span className="bd-sublabel">Make</span>
+                        {brand.logo ? (
+                          <span className="vs-chosen__mark" role="img" aria-label={brand.name}>
+                            <BrandMark brand={brand} />
+                          </span>
+                        ) : (
                           <span className="vs-chosen__name">{brand.name}</span>
-                        </span>
+                        )}
                       </div>
                       <div className="bd-row bd-row--model">
                         <ListSelect
@@ -283,12 +287,14 @@ export function BuildDesk() {
                   {step === 2 && brand && (
                     <StepHead title={STEPS[2]}>
                       <div className="vs-summary">
-                        <span className="vs-summary__mark">
-                          <BrandMark brand={brand} />
-                        </span>
+                        {brand.logo && (
+                          <span className="vs-summary__mark" role="img" aria-label={brand.name}>
+                            <BrandMark brand={brand} />
+                          </span>
+                        )}
                         <span className="vs-summary__text">
                           <span className="bd-sublabel">Quote for</span>
-                          <span className="vs-summary__vehicle">{vehicle}</span>
+                          <span className="vs-summary__vehicle">{vehicleShort}</span>
                         </span>
                         <button type="button" className="vs-summary__edit" onClick={() => goTo(1)}>
                           Edit
@@ -383,11 +389,17 @@ function StepHead({ title, children }: { title: string; children: ReactNode }) {
   )
 }
 
+/** Grid cells: a soft light follows the pointer (--mx, --my) */
+function spotlight(e: PointerEvent<HTMLButtonElement>) {
+  const r = e.currentTarget.getBoundingClientRect()
+  e.currentTarget.style.setProperty('--mx', `${e.clientX - r.left}px`)
+  e.currentTarget.style.setProperty('--my', `${e.clientY - r.top}px`)
+}
+
 /**
- * A make's logo at a consistent optical size: every mark gets roughly the
- * same area (so a wide wordmark isn't dwarfed by a round badge), capped in
- * width and height. Without a logo file: the name, set as a typographic
- * placeholder.
+ * A make's logo, fitted inside the same box in every cell (CSS, from the
+ * logo's aspect), so wide wordmarks and tall crests read at one size.
+ * Without a logo file: the name, set as a typographic placeholder.
  */
 function BrandMark({ brand }: { brand: VehicleBrand }) {
   if (!brand.logo) {
@@ -397,11 +409,7 @@ function BrandMark({ brand }: { brand: VehicleBrand }) {
       </span>
     )
   }
-  const aspect = brand.aspect ?? 1
-  let h = Math.min(1.3, Math.sqrt(1.25 / aspect))
-  let w = h * aspect
-  if (w > 3) [w, h] = [3, 3 / aspect]
-  return <span aria-hidden="true" className="vs-mark" style={{ '--mark-w': `${w}em`, '--mark-h': `${h}em` } as CSSProperties} dangerouslySetInnerHTML={{ __html: brand.logo }} />
+  return <span aria-hidden="true" className="vs-mark" style={{ '--a': brand.aspect ?? 1 } as CSSProperties} dangerouslySetInnerHTML={{ __html: brand.logo }} />
 }
 
 /**
