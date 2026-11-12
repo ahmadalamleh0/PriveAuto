@@ -1724,13 +1724,14 @@
   /*
    * Vehicle selector (2026-11-12, after the Vyper configurator, in Privé's
    * own terms). Makes: an architectural grid of hairline-divided cells
-   * (the 1px gaps show the line colour behind), 3 across, 2 on phones.
+   * (the 1px gaps show the line colour behind), 3 across at every width;
+   * phones get square cells and smaller marks.
    * Logos sit dimmed in paper and come up to full on hover; the chosen make
    * keeps a hairline frame and a dot when you come back to the grid.
    */
   .vs-grid {
     display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 1px;
     margin: 0;
     padding: 0;
@@ -1739,12 +1740,6 @@
     border: 1px solid rgb(255 255 255 / 0.07);
     border-radius: 12px;
     background: rgb(255 255 255 / 0.07);
-  }
-
-  @media (min-width: 640px) {
-    .vs-grid {
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-    }
   }
 
   .vs-grid__item {
@@ -1830,6 +1825,23 @@
     height: 5px;
     border-radius: 50%;
     background: var(--color-paper);
+  }
+
+  @media (max-width: 639px) {
+    .vs-brand {
+      aspect-ratio: 1;
+      padding: 0.5rem;
+    }
+
+    .vs-grid .vs-mark {
+      font-size: 1.625rem;
+    }
+
+    .vs-grid .vs-mark--type {
+      font-size: 0.5625rem;
+      letter-spacing: 0.12em;
+      overflow-wrap: anywhere;
+    }
   }
 
   .vs-brand:focus-visible {
