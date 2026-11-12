@@ -70,6 +70,26 @@ import sb5560Jpg from '@/assets/images/projects/ferrari-sf90-black-5-560.jpg'
 import sb5560Webp from '@/assets/images/projects/ferrari-sf90-black-5-560.webp'
 import sb5960Jpg from '@/assets/images/projects/ferrari-sf90-black-5-960.jpg'
 import sb5960Webp from '@/assets/images/projects/ferrari-sf90-black-5-960.webp'
+import rs1560Jpg from '@/assets/images/projects/rolls-royce-spectre-1-560.jpg'
+import rs1560Webp from '@/assets/images/projects/rolls-royce-spectre-1-560.webp'
+import rs1960Jpg from '@/assets/images/projects/rolls-royce-spectre-1-960.jpg'
+import rs1960Webp from '@/assets/images/projects/rolls-royce-spectre-1-960.webp'
+import rs2560Jpg from '@/assets/images/projects/rolls-royce-spectre-2-560.jpg'
+import rs2560Webp from '@/assets/images/projects/rolls-royce-spectre-2-560.webp'
+import rs2960Jpg from '@/assets/images/projects/rolls-royce-spectre-2-960.jpg'
+import rs2960Webp from '@/assets/images/projects/rolls-royce-spectre-2-960.webp'
+import rs3560Jpg from '@/assets/images/projects/rolls-royce-spectre-3-560.jpg'
+import rs3560Webp from '@/assets/images/projects/rolls-royce-spectre-3-560.webp'
+import rs3960Jpg from '@/assets/images/projects/rolls-royce-spectre-3-960.jpg'
+import rs3960Webp from '@/assets/images/projects/rolls-royce-spectre-3-960.webp'
+import rs4560Jpg from '@/assets/images/projects/rolls-royce-spectre-4-560.jpg'
+import rs4560Webp from '@/assets/images/projects/rolls-royce-spectre-4-560.webp'
+import rs4960Jpg from '@/assets/images/projects/rolls-royce-spectre-4-960.jpg'
+import rs4960Webp from '@/assets/images/projects/rolls-royce-spectre-4-960.webp'
+import rs5560Jpg from '@/assets/images/projects/rolls-royce-spectre-5-560.jpg'
+import rs5560Webp from '@/assets/images/projects/rolls-royce-spectre-5-560.webp'
+import rs5960Jpg from '@/assets/images/projects/rolls-royce-spectre-5-960.jpg'
+import rs5960Webp from '@/assets/images/projects/rolls-royce-spectre-5-960.webp'
 import fe1560Jpg from '@/assets/images/projects/ferrari-1-560.jpg'
 import fe1560Webp from '@/assets/images/projects/ferrari-1-560.webp'
 import fe1960Jpg from '@/assets/images/projects/ferrari-1-960.jpg'
@@ -291,6 +311,40 @@ export const projects: Project[] = [
         webp: set([[m5VentPosterWebp, 540]]),
         jpg: set([[m5VentPosterJpg, 540]]),
         video: m5VentVideo,
+      },
+    ],
+  },
+  {
+    id: 'rolls-royce-spectre',
+    make: 'Rolls-Royce',
+    model: 'Spectre',
+    logo: rollsRoyceMark,
+    confirm: 'Spectre read from the split headlights and coupé roofline; confirm with the client',
+    image: {
+      alt: 'Matte black Rolls-Royce Spectre head-on in the studio, copper grille and forged carbon bonnet',
+      webp: set([[rs1560Webp, 560], [rs1960Webp, 960]]),
+      jpg: set([[rs1560Jpg, 560], [rs1960Jpg, 960]]),
+    },
+    gallery: [
+      {
+        alt: 'The Spectre door sill in forged carbon with a Mansory plate, orange leather seat above',
+        webp: set([[rs2560Webp, 560], [rs2960Webp, 960]]),
+        jpg: set([[rs2560Jpg, 560], [rs2960Jpg, 960]]),
+      },
+      {
+        alt: 'The Spectre bonnet edge in forged carbon over matte black paint, slim LED headlight below',
+        webp: set([[rs3560Webp, 560], [rs3960Webp, 960]]),
+        jpg: set([[rs3560Jpg, 560], [rs3960Jpg, 960]]),
+      },
+      {
+        alt: 'The Spectre rear quarter by the studio shutter: matte black, a copper pinstripe and forged wheels',
+        webp: set([[rs4560Webp, 560], [rs4960Webp, 960]]),
+        jpg: set([[rs4560Jpg, 560], [rs4960Jpg, 960]]),
+      },
+      {
+        alt: 'The Spectre front close: copper-finished grille, Spirit of Ecstasy and forged carbon bonnet',
+        webp: set([[rs5560Webp, 560], [rs5960Webp, 960]]),
+        jpg: set([[rs5560Jpg, 560], [rs5960Jpg, 960]]),
       },
     ],
   },
