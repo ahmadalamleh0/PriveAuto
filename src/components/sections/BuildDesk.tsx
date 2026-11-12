@@ -182,10 +182,10 @@ export function BuildDesk() {
           <header className="build-brief__intro">
             <p data-bd-reveal className="bd-status">
               <span aria-hidden="true" className="bd-status__dot" />
-              Private Inquiries
+              PRIVATE REQUESTS
             </p>
             <h2 id="build-title" data-bd-reveal className="brand-headline build-brief__title">
-              Enquire with Privé
+              Make an Enquiry.
             </h2>
           </header>
 
