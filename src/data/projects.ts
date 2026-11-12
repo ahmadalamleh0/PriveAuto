@@ -90,10 +90,6 @@ import rs5560Jpg from '@/assets/images/projects/rolls-royce-spectre-5-560.jpg'
 import rs5560Webp from '@/assets/images/projects/rolls-royce-spectre-5-560.webp'
 import rs5960Jpg from '@/assets/images/projects/rolls-royce-spectre-5-960.jpg'
 import rs5960Webp from '@/assets/images/projects/rolls-royce-spectre-5-960.webp'
-import fe1560Jpg from '@/assets/images/projects/ferrari-1-560.jpg'
-import fe1560Webp from '@/assets/images/projects/ferrari-1-560.webp'
-import fe1960Jpg from '@/assets/images/projects/ferrari-1-960.jpg'
-import fe1960Webp from '@/assets/images/projects/ferrari-1-960.webp'
 import fe2560Jpg from '@/assets/images/projects/ferrari-2-560.jpg'
 import fe2560Webp from '@/assets/images/projects/ferrari-2-560.webp'
 import fe2960Jpg from '@/assets/images/projects/ferrari-2-960.jpg'
@@ -325,15 +321,15 @@ export const projects: Project[] = [
     logo: porscheMark,
     confirm: 'Widebody 911: Turbo S base assumed from the intakes; confirm with the client',
     image: {
-      alt: 'White widebody Porsche 911 in a dark studio: forged carbon kit and purple wheels',
-      webp: set([[pw1560Webp, 560], [pw1960Webp, 960]]),
-      jpg: set([[pw1560Jpg, 560], [pw1960Jpg, 960]]),
+      alt: 'The white 911 side on: carbon side blades and purple wheels',
+      webp: set([[pw2560Webp, 560], [pw2960Webp, 960]]),
+      jpg: set([[pw2560Jpg, 560], [pw2960Jpg, 960]]),
     },
     gallery: [
       {
-        alt: 'The white 911 side on: carbon side blades and purple wheels',
-        webp: set([[pw2560Webp, 560], [pw2960Webp, 960]]),
-        jpg: set([[pw2560Jpg, 560], [pw2960Jpg, 960]]),
+        alt: 'White widebody Porsche 911 in a dark studio: forged carbon kit and purple wheels',
+        webp: set([[pw1560Webp, 560], [pw1960Webp, 960]]),
+        jpg: set([[pw1560Jpg, 560], [pw1960Jpg, 960]]),
       },
       {
         alt: 'The white 911 rear wing in forged carbon over a red light bar',
@@ -364,11 +360,6 @@ export const projects: Project[] = [
       jpg: set([[fe5560Jpg, 560], [fe5960Jpg, 960]]),
     },
     gallery: [
-      {
-        alt: 'Satin silver Ferrari F8 Spider in the studio, front quarter: carbon aero, black wheels and a tiffany-blue cabin',
-        webp: set([[fe1560Webp, 560], [fe1960Webp, 960]]),
-        jpg: set([[fe1560Jpg, 560], [fe1960Jpg, 960]]),
-      },
       {
         alt: 'The silver F8 Spider head-on in the white studio, S-duct bonnet and tiffany-blue seats',
         webp: set([[fe2560Webp, 560], [fe2960Webp, 960]]),
