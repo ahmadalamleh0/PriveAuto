@@ -63,10 +63,11 @@ export default function App() {
         ) : (
           <main id="main">
             <Hero />
-            <Showcase />
             <Editorial />
             <BuildDesk />
             <Projects />
+            {/* Brand strip under Recent Work (client, 2026-11-12) */}
+            <Showcase />
             {SHOW_TUNING && <Tuning />}
             <Philosophy />
             <Reviews />
