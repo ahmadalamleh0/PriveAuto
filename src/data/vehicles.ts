@@ -72,6 +72,7 @@ export const BRANDS: VehicleBrand[] = [
     name: 'McLaren',
     logo: { svg: mclarenLogo },
     aspect: 6.723,
+    scale: 1.3, // a thin wordmark: wider to hold its own
     models: m('W1', '750S', '765LT', '720S', 'Artura', 'GTS', 'GT', 'Senna', 'Elva', '600LT', '570S', 'P1'),
   },
   {
@@ -93,6 +94,7 @@ export const BRANDS: VehicleBrand[] = [
     name: 'Bentley',
     logo: { src: bentleyImage },
     aspect: 2.231,
+    scale: 1.2,
     models: m('Continental GT', 'Continental GTC', 'Flying Spur', 'Bentayga', 'Mulsanne'),
   },
   {
@@ -100,6 +102,7 @@ export const BRANDS: VehicleBrand[] = [
     name: 'Aston Martin',
     logo: { src: astonMartinImage },
     aspect: 4.407,
+    scale: 1.3, // fine wings: wider to hold their own
     models: m('DB12', 'Vanquish', 'Vantage', 'DBX707', 'DBX', 'DBS', 'DB11', 'Valhalla', 'Valkyrie'),
   },
   {
