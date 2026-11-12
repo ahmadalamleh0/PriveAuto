@@ -233,7 +233,8 @@ export function BuildDesk() {
                               onClick={() => chooseBrand(b.id)}
                             >
                               <BrandMark brand={b} />
-                              {b.logo && <span className="vs-brand__name">{b.name}</span>}
+                              {/* A logo stands alone; its name is for screen readers only */}
+                              {b.logo && <span className="sr-only">{b.name}</span>}
                             </button>
                           </li>
                         ))}

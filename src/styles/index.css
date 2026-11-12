@@ -1801,15 +1801,6 @@
     text-wrap: balance;
   }
 
-  .vs-brand__name {
-    font-family: var(--font-editorial);
-    font-size: 0.6875rem;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    color: rgb(242 241 238 / 0.4);
-    transition: color 300ms ease;
-  }
-
   @media (hover: hover) and (pointer: fine) {
     .vs-brand:hover {
       background: #0c0c0c;
@@ -1818,10 +1809,6 @@
     .vs-brand:hover .vs-mark {
       opacity: 1;
       transform: scale(1.04);
-    }
-
-    .vs-brand:hover .vs-brand__name {
-      color: rgb(242 241 238 / 0.75);
     }
   }
 
