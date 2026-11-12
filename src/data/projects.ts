@@ -50,6 +50,26 @@ import rc5560Jpg from '@/assets/images/projects/rolls-royce-cullinan-5-560.jpg'
 import rc5560Webp from '@/assets/images/projects/rolls-royce-cullinan-5-560.webp'
 import rc5960Jpg from '@/assets/images/projects/rolls-royce-cullinan-5-960.jpg'
 import rc5960Webp from '@/assets/images/projects/rolls-royce-cullinan-5-960.webp'
+import sb1560Jpg from '@/assets/images/projects/ferrari-sf90-black-1-560.jpg'
+import sb1560Webp from '@/assets/images/projects/ferrari-sf90-black-1-560.webp'
+import sb1960Jpg from '@/assets/images/projects/ferrari-sf90-black-1-960.jpg'
+import sb1960Webp from '@/assets/images/projects/ferrari-sf90-black-1-960.webp'
+import sb2560Jpg from '@/assets/images/projects/ferrari-sf90-black-2-560.jpg'
+import sb2560Webp from '@/assets/images/projects/ferrari-sf90-black-2-560.webp'
+import sb2960Jpg from '@/assets/images/projects/ferrari-sf90-black-2-960.jpg'
+import sb2960Webp from '@/assets/images/projects/ferrari-sf90-black-2-960.webp'
+import sb3560Jpg from '@/assets/images/projects/ferrari-sf90-black-3-560.jpg'
+import sb3560Webp from '@/assets/images/projects/ferrari-sf90-black-3-560.webp'
+import sb3960Jpg from '@/assets/images/projects/ferrari-sf90-black-3-960.jpg'
+import sb3960Webp from '@/assets/images/projects/ferrari-sf90-black-3-960.webp'
+import sb4560Jpg from '@/assets/images/projects/ferrari-sf90-black-4-560.jpg'
+import sb4560Webp from '@/assets/images/projects/ferrari-sf90-black-4-560.webp'
+import sb4960Jpg from '@/assets/images/projects/ferrari-sf90-black-4-960.jpg'
+import sb4960Webp from '@/assets/images/projects/ferrari-sf90-black-4-960.webp'
+import sb5560Jpg from '@/assets/images/projects/ferrari-sf90-black-5-560.jpg'
+import sb5560Webp from '@/assets/images/projects/ferrari-sf90-black-5-560.webp'
+import sb5960Jpg from '@/assets/images/projects/ferrari-sf90-black-5-960.jpg'
+import sb5960Webp from '@/assets/images/projects/ferrari-sf90-black-5-960.webp'
 import fe1560Jpg from '@/assets/images/projects/ferrari-1-560.jpg'
 import fe1560Webp from '@/assets/images/projects/ferrari-1-560.webp'
 import fe1960Jpg from '@/assets/images/projects/ferrari-1-960.jpg'
@@ -305,6 +325,40 @@ export const projects: Project[] = [
         alt: 'The 911 seats in pale blue with quilted white centres',
         webp: set([[pw5560Webp, 560], [pw5960Webp, 960]]),
         jpg: set([[pw5560Jpg, 560], [pw5960Jpg, 960]]),
+      },
+    ],
+  },
+  {
+    id: 'ferrari-sf90-black',
+    make: 'Ferrari',
+    model: 'SF90',
+    logo: ferrariMark,
+    confirm: 'SF90 (Stradale or Spider, possibly XX) read from the front and side vents; confirm with the client',
+    image: {
+      alt: 'Matte black Ferrari SF90 in the studio under the mezzanine stairs, yellow forged wheels',
+      webp: set([[sb1560Webp, 560], [sb1960Webp, 960]]),
+      jpg: set([[sb1560Jpg, 560], [sb1960Jpg, 960]]),
+    },
+    gallery: [
+      {
+        alt: 'The SF90 front up close: LED headlight, carbon splitter and satin black bonnet',
+        webp: set([[sb2560Webp, 560], [sb2960Webp, 960]]),
+        jpg: set([[sb2560Jpg, 560], [sb2960Jpg, 960]]),
+      },
+      {
+        alt: 'The SF90 rear wheel: yellow forged rim with black mesh centre, reflected in the polished floor',
+        webp: set([[sb3560Webp, 560], [sb3960Webp, 960]]),
+        jpg: set([[sb3560Jpg, 560], [sb3960Jpg, 960]]),
+      },
+      {
+        alt: 'The SF90 head-on beneath the studio staircase, headlights on',
+        webp: set([[sb4560Webp, 560], [sb4960Webp, 960]]),
+        jpg: set([[sb4560Jpg, 560], [sb4960Jpg, 960]]),
+      },
+      {
+        alt: 'The SF90 flank: yellow wheel, side vents and the Ferrari shield on the wing',
+        webp: set([[sb5560Webp, 560], [sb5960Webp, 960]]),
+        jpg: set([[sb5560Jpg, 560], [sb5960Jpg, 960]]),
       },
     ],
   },
