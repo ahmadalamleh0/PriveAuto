@@ -9,14 +9,15 @@ import { handleLinkClick } from '@/lib/router'
 
 /**
  * Services showcase after the hero: 3 service cards → centred statement →
- * 2 service cards, centred at the same size. Each card is a client photo with a
- * centred title and chevron (Motorcarlease reference) linking to the
+ * 2 service cards, then 1 (Tuning), each row centred at the same size. Each
+ * card is a client photo with a centred title and chevron (Motorcarlease
+ * reference) linking to the
  * service's page (/services/:id). Content: data/editorial.ts.
  * Animation hooks: [data-editorial-card], [data-editorial-statement].
  */
 export function Editorial() {
   const scope = useRef<HTMLElement>(null)
-  const { upper, statement, lower } = editorial
+  const { upper, statement, lower, closing } = editorial
 
   useGSAP(() => editorialReveal(), { scope })
 
@@ -36,7 +37,7 @@ export function Editorial() {
           <p className="statement__body">{withEmphasis(statement.body)}</p>
         </div>
 
-        <Collage rows={[lower]} />
+        <Collage rows={[lower, closing]} />
       </div>
     </section>
   )

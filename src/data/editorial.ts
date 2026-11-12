@@ -3,7 +3,7 @@ import bodyKits from '@/assets/images/services/body-kits-cullinan.jpg'
 import protectionFinish from '@/assets/images/services/protection-porsche-ppf.jpg'
 import starlight from '@/assets/images/services/starlight.jpg'
 import steeringWheels from '@/assets/images/services/steering-wheels.jpg'
-import tuning from '@/assets/images/services/tuning.jpg'
+import tuning from '@/assets/images/services/tuning-ferrari.jpg'
 import wheelsSuspension from '@/assets/images/services/porsche-wheel.jpg'
 import wraps from '@/assets/images/services/wraps-mclaren.jpg'
 import type { MediaAsset } from './media'
@@ -97,10 +97,25 @@ export const editorial = {
     },
   ] satisfies [EditorialCard, EditorialCard],
 
+  // One card on its own row under `lower`, centred at the same size
+  // (client, 2026-11-12)
+  closing: [
+    {
+      id: 'tuning',
+      title: 'Tuning',
+      media: {
+        type: 'image',
+        src: tuning,
+        alt: 'Red Ferrari in the Privé Auto workshop seen from above, rear bumper off and its V6 under the engine cover',
+        width: 1072,
+        height: 1265,
+        position: '50% 50%', // client photo (2026-11-12), cropped to the card around the car
+      },
+    },
+  ] satisfies [EditorialCard],
+
   // Services without a card since the five-card layout (2026-11-10). Their
-  // pages stay live: the footer still links Tuning and Ambient Lighting here,
-  // and the enquiry form still offers them. Remove an entry here only once
-  // nothing links to its page.
+  // pages stay live; remove an entry only once nothing links to its page.
   unlisted: [
     {
       id: 'starlight',
@@ -112,18 +127,6 @@ export const editorial = {
         width: 640,
         height: 853,
         position: '50% 30%',
-      },
-    },
-    {
-      id: 'tuning',
-      title: 'Tuning',
-      media: {
-        type: 'image',
-        src: tuning,
-        alt: 'Matte grey Porsche from behind: large rear wing, glowing light bar and an exhaust flame',
-        width: 1000,
-        height: 1502,
-        position: '50% 40%', // wing, light bar and flame all in the square crop
       },
     },
     {
