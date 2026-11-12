@@ -50,26 +50,6 @@ import rc5560Jpg from '@/assets/images/projects/rolls-royce-cullinan-5-560.jpg'
 import rc5560Webp from '@/assets/images/projects/rolls-royce-cullinan-5-560.webp'
 import rc5960Jpg from '@/assets/images/projects/rolls-royce-cullinan-5-960.jpg'
 import rc5960Webp from '@/assets/images/projects/rolls-royce-cullinan-5-960.webp'
-import pg1560Jpg from '@/assets/images/projects/porsche-gt3-rs-1-560.jpg'
-import pg1560Webp from '@/assets/images/projects/porsche-gt3-rs-1-560.webp'
-import pg1960Jpg from '@/assets/images/projects/porsche-gt3-rs-1-960.jpg'
-import pg1960Webp from '@/assets/images/projects/porsche-gt3-rs-1-960.webp'
-import pg2560Jpg from '@/assets/images/projects/porsche-gt3-rs-2-560.jpg'
-import pg2560Webp from '@/assets/images/projects/porsche-gt3-rs-2-560.webp'
-import pg2960Jpg from '@/assets/images/projects/porsche-gt3-rs-2-960.jpg'
-import pg2960Webp from '@/assets/images/projects/porsche-gt3-rs-2-960.webp'
-import pg3560Jpg from '@/assets/images/projects/porsche-gt3-rs-3-560.jpg'
-import pg3560Webp from '@/assets/images/projects/porsche-gt3-rs-3-560.webp'
-import pg3960Jpg from '@/assets/images/projects/porsche-gt3-rs-3-960.jpg'
-import pg3960Webp from '@/assets/images/projects/porsche-gt3-rs-3-960.webp'
-import pg4560Jpg from '@/assets/images/projects/porsche-gt3-rs-4-560.jpg'
-import pg4560Webp from '@/assets/images/projects/porsche-gt3-rs-4-560.webp'
-import pg4960Jpg from '@/assets/images/projects/porsche-gt3-rs-4-960.jpg'
-import pg4960Webp from '@/assets/images/projects/porsche-gt3-rs-4-960.webp'
-import pg5560Jpg from '@/assets/images/projects/porsche-gt3-rs-5-560.jpg'
-import pg5560Webp from '@/assets/images/projects/porsche-gt3-rs-5-560.webp'
-import pg5960Jpg from '@/assets/images/projects/porsche-gt3-rs-5-960.jpg'
-import pg5960Webp from '@/assets/images/projects/porsche-gt3-rs-5-960.webp'
 import fe1560Jpg from '@/assets/images/projects/ferrari-1-560.jpg'
 import fe1560Webp from '@/assets/images/projects/ferrari-1-560.webp'
 import fe1960Jpg from '@/assets/images/projects/ferrari-1-960.jpg'
@@ -223,39 +203,6 @@ export const projects: Project[] = [
     ],
   },
   {
-    id: 'porsche-911-gt3-rs',
-    make: 'Porsche',
-    model: '911 GT3 RS',
-    logo: porscheMark,
-    image: {
-      alt: 'Matte black Porsche 911 GT3 RS in the studio, orange stripe along the sill',
-      webp: set([[pg1560Webp, 560], [pg1960Webp, 960]]),
-      jpg: set([[pg1560Jpg, 560], [pg1960Jpg, 960]]),
-    },
-    gallery: [
-      {
-        alt: 'The GT3 RS on a track straight, palms behind',
-        webp: set([[pg2560Webp, 560], [pg2960Webp, 960]]),
-        jpg: set([[pg2560Jpg, 560], [pg2960Jpg, 960]]),
-      },
-      {
-        alt: 'The GT3 RS tail: orange GT3 RS badge, red light bar and a PRIVÉ plate',
-        webp: set([[pg3560Webp, 560], [pg3960Webp, 960]]),
-        jpg: set([[pg3560Jpg, 560], [pg3960Jpg, 960]]),
-      },
-      {
-        alt: 'The GT3 RS headlight and bonnet vents in matte black, an orange detail at the corner',
-        webp: set([[pg4560Webp, 560], [pg4960Webp, 960]]),
-        jpg: set([[pg4560Jpg, 560], [pg4960Jpg, 960]]),
-      },
-      {
-        alt: 'The GT3 RS swan-neck wing with an orange Weissach RS logo',
-        webp: set([[pg5560Webp, 560], [pg5960Webp, 960]]),
-        jpg: set([[pg5560Jpg, 560], [pg5960Jpg, 960]]),
-      },
-    ],
-  },
-  {
     id: 'ferrari-296-gtb',
     make: 'Ferrari',
     model: '296 GTB',
@@ -286,9 +233,9 @@ export const projects: Project[] = [
     logo: bmwMark,
     confirm: 'M5 read from the tailgate badge; confirm with the client',
     image: {
-      alt: 'Matte blue BMW M5 side profile in the studio, forged carbon vents and blue calipers',
-      webp: set([[m51560Webp, 560], [m51960Webp, 960]]),
-      jpg: set([[m51560Jpg, 560], [m51960Jpg, 960]]),
+      alt: 'The M5 cabin trimmed in bright blue, ambient lighting along the doors',
+      webp: set([[m53560Webp, 560], [m53960Webp, 960]]),
+      jpg: set([[m53560Jpg, 560], [m53960Jpg, 960]]),
     },
     gallery: [
       {
@@ -297,9 +244,9 @@ export const projects: Project[] = [
         jpg: set([[m52560Jpg, 560], [m52960Jpg, 960]]),
       },
       {
-        alt: 'The M5 cabin trimmed in bright blue, ambient lighting along the doors',
-        webp: set([[m53560Webp, 560], [m53960Webp, 960]]),
-        jpg: set([[m53560Jpg, 560], [m53960Jpg, 960]]),
+        alt: 'Matte blue BMW M5 side profile in the studio, forged carbon vents and blue calipers',
+        webp: set([[m51560Webp, 560], [m51960Webp, 960]]),
+        jpg: set([[m51560Jpg, 560], [m51960Jpg, 960]]),
       },
       {
         alt: 'The M5 front wing vent in forged carbon, its light strip glowing',
