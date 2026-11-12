@@ -18,6 +18,9 @@ import { findService } from '@/data/services'
 import { ScrollTrigger } from '@/lib/gsap'
 import { matchRoute, usePathname } from '@/lib/router'
 
+/** Tuning section hidden for now (client, 2026-11-12); set true to show it again */
+const SHOW_TUNING = false
+
 export default function App() {
   const route = matchRoute(usePathname())
   const service = route.name === 'service' ? findService(route.slug) : undefined
@@ -64,7 +67,7 @@ export default function App() {
             <Editorial />
             <BuildDesk />
             <Projects />
-            <Tuning />
+            {SHOW_TUNING && <Tuning />}
             <Philosophy />
             <Reviews />
             <InstagramShowcase />
