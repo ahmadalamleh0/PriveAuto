@@ -86,12 +86,11 @@ export const site = {
     // Small location line above the headline (client, 2026-11-10)
     eyebrow: ['Studio', 'Miami, Florida'],
     headline: [['Experience your car’s'], ['full potential.']],
-    // Privé Auto's services (client, 2026-11-12): the service cards plus
-    // ceramic coating. Rows of two so phones break into three balanced lines
-    // (never mid-row); one line on md+.
+    // Privé Auto's services (client, 2026-11-12): the five service cards
+    // (ceramic coating taken off). Two rows so phones break into two balanced
+    // lines (never mid-row); one line on md+.
     services: [
-      ['Wraps', 'PPF'],
-      ['Ceramic Coating', 'Body Kits'],
+      ['Wraps', 'PPF', 'Body Kits'],
       ['Wheels & Tires', 'Custom Interiors'],
     ],
     cta: {
