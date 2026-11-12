@@ -1,11 +1,8 @@
 import bugattiMark from '@/assets/brands/bugatti.png'
 import ferrariMark from '@/assets/brands/ferrari.svg'
+import lamborghiniMark from '@/assets/brands/lamborghini.svg'
 import porscheMark from '@/assets/brands/porsche.svg'
 import rollsRoyceMark from '@/assets/brands/rolls-royce.png'
-import bmwMark from '@/assets/logos/makes/bmw.svg'
-import m5VentPosterJpg from '@/assets/images/projects/bmw-m5-vent-poster.jpg'
-import m5VentPosterWebp from '@/assets/images/projects/bmw-m5-vent-poster.webp'
-import m5VentVideo from '@/assets/images/projects/bmw-m5-vent.mp4'
 import bc1560Jpg from '@/assets/images/projects/bugatti-chiron-1-560.jpg'
 import bc1560Webp from '@/assets/images/projects/bugatti-chiron-1-560.webp'
 import bc1960Jpg from '@/assets/images/projects/bugatti-chiron-1-960.jpg'
@@ -70,6 +67,22 @@ import sb5560Jpg from '@/assets/images/projects/ferrari-sf90-black-5-560.jpg'
 import sb5560Webp from '@/assets/images/projects/ferrari-sf90-black-5-560.webp'
 import sb5960Jpg from '@/assets/images/projects/ferrari-sf90-black-5-960.jpg'
 import sb5960Webp from '@/assets/images/projects/ferrari-sf90-black-5-960.webp'
+import sv1560Jpg from '@/assets/images/projects/lamborghini-svj-1-560.jpg'
+import sv1560Webp from '@/assets/images/projects/lamborghini-svj-1-560.webp'
+import sv1960Jpg from '@/assets/images/projects/lamborghini-svj-1-960.jpg'
+import sv1960Webp from '@/assets/images/projects/lamborghini-svj-1-960.webp'
+import sv2560Jpg from '@/assets/images/projects/lamborghini-svj-2-560.jpg'
+import sv2560Webp from '@/assets/images/projects/lamborghini-svj-2-560.webp'
+import sv2960Jpg from '@/assets/images/projects/lamborghini-svj-2-960.jpg'
+import sv2960Webp from '@/assets/images/projects/lamborghini-svj-2-960.webp'
+import sv3560Jpg from '@/assets/images/projects/lamborghini-svj-3-560.jpg'
+import sv3560Webp from '@/assets/images/projects/lamborghini-svj-3-560.webp'
+import sv3960Jpg from '@/assets/images/projects/lamborghini-svj-3-960.jpg'
+import sv3960Webp from '@/assets/images/projects/lamborghini-svj-3-960.webp'
+import sv4560Jpg from '@/assets/images/projects/lamborghini-svj-4-560.jpg'
+import sv4560Webp from '@/assets/images/projects/lamborghini-svj-4-560.webp'
+import sv4960Jpg from '@/assets/images/projects/lamborghini-svj-4-960.jpg'
+import sv4960Webp from '@/assets/images/projects/lamborghini-svj-4-960.webp'
 import fe2560Jpg from '@/assets/images/projects/ferrari-2-560.jpg'
 import fe2560Webp from '@/assets/images/projects/ferrari-2-560.webp'
 import fe2960Jpg from '@/assets/images/projects/ferrari-2-960.jpg'
@@ -86,18 +99,6 @@ import fe5560Jpg from '@/assets/images/projects/ferrari-5-560.jpg'
 import fe5560Webp from '@/assets/images/projects/ferrari-5-560.webp'
 import fe5960Jpg from '@/assets/images/projects/ferrari-5-960.jpg'
 import fe5960Webp from '@/assets/images/projects/ferrari-5-960.webp'
-import m51560Jpg from '@/assets/images/projects/bmw-m5-1-560.jpg'
-import m51560Webp from '@/assets/images/projects/bmw-m5-1-560.webp'
-import m51960Jpg from '@/assets/images/projects/bmw-m5-1-960.jpg'
-import m51960Webp from '@/assets/images/projects/bmw-m5-1-960.webp'
-import m52560Jpg from '@/assets/images/projects/bmw-m5-2-560.jpg'
-import m52560Webp from '@/assets/images/projects/bmw-m5-2-560.webp'
-import m52960Jpg from '@/assets/images/projects/bmw-m5-2-960.jpg'
-import m52960Webp from '@/assets/images/projects/bmw-m5-2-960.webp'
-import m53560Jpg from '@/assets/images/projects/bmw-m5-3-560.jpg'
-import m53560Webp from '@/assets/images/projects/bmw-m5-3-560.webp'
-import m53960Jpg from '@/assets/images/projects/bmw-m5-3-960.jpg'
-import m53960Webp from '@/assets/images/projects/bmw-m5-3-960.webp'
 import pw1560Jpg from '@/assets/images/projects/porsche-911-white-1-560.jpg'
 import pw1560Webp from '@/assets/images/projects/porsche-911-white-1-560.webp'
 import pw1960Jpg from '@/assets/images/projects/porsche-911-white-1-960.jpg'
@@ -324,32 +325,30 @@ export const projects: Project[] = [
     ],
   },
   {
-    id: 'bmw-m5',
-    make: 'BMW',
-    model: 'M5',
-    logo: bmwMark,
-    confirm: 'M5 read from the tailgate badge; confirm with the client',
+    id: 'lamborghini-aventador-svj',
+    make: 'Lamborghini',
+    model: 'Aventador SVJ',
+    logo: lamborghiniMark,
     image: {
-      alt: 'The M5 cabin trimmed in bright blue, ambient lighting along the doors',
-      webp: set([[m53560Webp, 560], [m53960Webp, 960]]),
-      jpg: set([[m53560Jpg, 560], [m53960Jpg, 960]]),
+      alt: 'White Lamborghini Aventador SVJ in the studio, scissor doors up, black roof and bonnet',
+      webp: set([[sv1560Webp, 560], [sv1960Webp, 810]]),
+      jpg: set([[sv1560Jpg, 560], [sv1960Jpg, 810]]),
     },
     gallery: [
       {
-        alt: 'The M5 tail: forged carbon diffuser, quad exhausts and a PRIVÉ plate',
-        webp: set([[m52560Webp, 560], [m52960Webp, 960]]),
-        jpg: set([[m52560Jpg, 560], [m52960Jpg, 960]]),
+        alt: 'The SVJ tail: big rear wing, red Y light bars, quad exhausts and a PRIVÉ plate',
+        webp: set([[sv2560Webp, 560], [sv2960Webp, 960]]),
+        jpg: set([[sv2560Jpg, 560], [sv2960Jpg, 960]]),
       },
       {
-        alt: 'Matte blue BMW M5 side profile in the studio, forged carbon vents and blue calipers',
-        webp: set([[m51560Webp, 560], [m51960Webp, 960]]),
-        jpg: set([[m51560Jpg, 560], [m51960Jpg, 960]]),
+        alt: 'The SVJ side up close: Italian tricolour stripe, gold accents and black wheels, the team at work behind',
+        webp: set([[sv3560Webp, 560], [sv3960Webp, 960]]),
+        jpg: set([[sv3560Jpg, 560], [sv3960Jpg, 960]]),
       },
       {
-        alt: 'The M5 front wing vent in forged carbon, its light strip glowing',
-        webp: set([[m5VentPosterWebp, 540]]),
-        jpg: set([[m5VentPosterJpg, 540]]),
-        video: m5VentVideo,
+        alt: 'A black and gold chrome Aventador SVJ in the studio under the strip lights, doors up',
+        webp: set([[sv4560Webp, 560], [sv4960Webp, 810]]),
+        jpg: set([[sv4560Jpg, 560], [sv4960Jpg, 810]]),
       },
     ],
   },
