@@ -1,5 +1,7 @@
+import gintani from '@/assets/logos/gintani.png'
 import limitedSpec from '@/assets/logos/limited-spec.png'
 import mansory from '@/assets/logos/mansory.png'
+import ryft from '@/assets/logos/ryft.png'
 import strasseForged from '@/assets/logos/strasse-forged.png'
 
 /**
@@ -7,7 +9,7 @@ import strasseForged from '@/assets/logos/strasse-forged.png'
  * Only `status: 'confirmed'` brands are shown.
  *
  * Privé Auto's brands, supplied by the client (2026-11-09): Mansory, Limited
- * Spec Automotive and Strasse Forged. Logos are the client's files, cut onto
+ * Spec Automotive and Strasse Forged; RYFT and Gintani added 2026-11-12. Logos are the client's files, cut onto
  * transparency for the dark strip (originals in ~/Downloads). Logo files
  * from the Mansor build's strip remain unused in assets/logos/.
  *
@@ -55,6 +57,20 @@ export const brands: Brand[] = [
     relation: 'Supplied by the client as a brand Privé Auto works with (2026-11-09)',
     // The SF shield, cut off its white background; its silver is kept
     logo: { src: strasseForged, prepared: true, stacked: true, color: true },
+  },
+  {
+    name: 'RYFT',
+    status: 'confirmed',
+    relation: 'Supplied by the client as a brand Privé Auto works with (2026-11-12)',
+    // White wordmark cut off its black background (images.png). Already light: no filter.
+    logo: { src: ryft, prepared: true },
+  },
+  {
+    name: 'Gintani',
+    status: 'confirmed',
+    relation: 'Supplied by the client as a brand Privé Auto works with (2026-11-12)',
+    // The winged wordmark, white on transparency as supplied (gintani.png), trimmed
+    logo: { src: gintani, prepared: true, tall: true }, // compact winged mark: set a touch taller to match RYFT's weight
   },
 ]
 
