@@ -62,6 +62,14 @@ import fe3560Jpg from '@/assets/images/projects/ferrari-3-560.jpg'
 import fe3560Webp from '@/assets/images/projects/ferrari-3-560.webp'
 import fe3960Jpg from '@/assets/images/projects/ferrari-3-960.jpg'
 import fe3960Webp from '@/assets/images/projects/ferrari-3-960.webp'
+import fe4560Jpg from '@/assets/images/projects/ferrari-4-560.jpg'
+import fe4560Webp from '@/assets/images/projects/ferrari-4-560.webp'
+import fe4960Jpg from '@/assets/images/projects/ferrari-4-960.jpg'
+import fe4960Webp from '@/assets/images/projects/ferrari-4-960.webp'
+import fe5560Jpg from '@/assets/images/projects/ferrari-5-560.jpg'
+import fe5560Webp from '@/assets/images/projects/ferrari-5-560.webp'
+import fe5960Jpg from '@/assets/images/projects/ferrari-5-960.jpg'
+import fe5960Webp from '@/assets/images/projects/ferrari-5-960.webp'
 import m51560Jpg from '@/assets/images/projects/bmw-m5-1-560.jpg'
 import m51560Webp from '@/assets/images/projects/bmw-m5-1-560.webp'
 import m51960Jpg from '@/assets/images/projects/bmw-m5-1-960.jpg'
@@ -203,26 +211,36 @@ export const projects: Project[] = [
     ],
   },
   {
-    id: 'ferrari-296-gtb',
+    id: 'ferrari-f8-spider',
     make: 'Ferrari',
-    model: '296 GTB',
+    model: 'F8 Spider',
     logo: ferrariMark,
-    confirm: 'Model read from the bodywork (296 GTB); confirm with the client',
+    confirm: 'F8 Spider read from the S-duct bonnet and open top; confirm with the client',
     image: {
-      alt: 'Satin silver Ferrari front in the studio: forged carbon splitter and vents',
+      alt: 'Satin silver Ferrari F8 Spider in the studio, front quarter: carbon aero, black wheels and a tiffany-blue cabin',
       webp: set([[fe1560Webp, 560], [fe1960Webp, 960]]),
       jpg: set([[fe1560Jpg, 560], [fe1960Jpg, 960]]),
     },
     gallery: [
       {
-        alt: 'The silver Ferrari tail: Ferrari script, slim red lights and a PRIVÉ plate',
+        alt: 'The silver F8 Spider head-on in the white studio, S-duct bonnet and tiffany-blue seats',
         webp: set([[fe2560Webp, 560], [fe2960Webp, 960]]),
         jpg: set([[fe2560Jpg, 560], [fe2960Jpg, 960]]),
       },
       {
-        alt: 'The Ferrari cockpit in tiffany-blue leather, carbon steering wheel with the yellow shield',
+        alt: 'Satin silver Ferrari front in the studio: forged carbon splitter and vents',
         webp: set([[fe3560Webp, 560], [fe3960Webp, 960]]),
         jpg: set([[fe3560Jpg, 560], [fe3960Jpg, 960]]),
+      },
+      {
+        alt: 'The silver Ferrari tail: Ferrari script, slim red lights and a PRIVÉ plate',
+        webp: set([[fe4560Webp, 560], [fe4960Webp, 960]]),
+        jpg: set([[fe4560Jpg, 560], [fe4960Jpg, 960]]),
+      },
+      {
+        alt: 'The Ferrari cockpit in tiffany-blue leather, carbon steering wheel with the yellow shield',
+        webp: set([[fe5560Webp, 560], [fe5960Webp, 960]]),
+        jpg: set([[fe5560Jpg, 560], [fe5960Jpg, 960]]),
       },
     ],
   },
