@@ -9,9 +9,9 @@ import wraps from '@/assets/images/services/wraps-mclaren.jpg'
 import type { MediaAsset } from './media'
 
 /**
- * Services showcase directly after the hero, Privé Auto's five services
- * (creative director, 2026-11-10):
- *   3 service cards → statement → 2 service cards (centred, same size)
+ * Services showcase directly after the hero, Privé Auto's six services
+ * (client, 2026-11-12):
+ *   4 service cards → statement → 2 service cards (centred, same size)
  * Cards render in array order, left to right.
  *
  * Ids are the service page slugs (/services/:id): keep them stable when a
@@ -23,6 +23,10 @@ import type { MediaAsset } from './media'
 export type EditorialCard = { id: string; title: string; media?: MediaAsset }
 
 export const editorial = {
+  // The line between the hero and the cards (client, 2026-11-12); a narrow
+  // screen breaks it only between these two parts
+  intro: ['Everything done in-house,', 'at our studio.'],
+
   upper: [
     {
       id: 'wraps',
@@ -60,17 +64,6 @@ export const editorial = {
         position: '50% 50%', // client photo (2026-11-10): the wheel arch centred, title on the gravel
       },
     },
-  ] satisfies [EditorialCard, EditorialCard, EditorialCard],
-
-  // Copy carried over from the Mansor Customs build: confirm with Privé Auto.
-  // Headline: one sentence per line.
-  // Body: wrap a word in *asterisks* to italicise it.
-  statement: {
-    headline: ['The Whole Build.'],
-    body: 'Privé Auto is a full service boutique designed to provide the best experience available for your automotive needs.',
-  },
-
-  lower: [
     {
       id: 'bespoke-interiors',
       title: 'Custom Interiors',
@@ -83,6 +76,17 @@ export const editorial = {
         position: '50% 50%', // client photo (2026-11-10): starlight headliner above, rear bench below
       },
     },
+  ] satisfies [EditorialCard, EditorialCard, EditorialCard, EditorialCard],
+
+  // Copy carried over from the Mansor Customs build: confirm with Privé Auto.
+  // Headline: one sentence per line.
+  // Body: wrap a word in *asterisks* to italicise it.
+  statement: {
+    headline: ['The Whole Build.'],
+    body: 'Privé Auto is a full service boutique designed to provide the best experience available for your automotive needs.',
+  },
+
+  lower: [
     {
       id: 'protection-finish',
       title: 'Paint Protection Film',
@@ -95,11 +99,6 @@ export const editorial = {
         position: '50% 50%', // client photo (2026-11-10): the team at work on the front wing, title on the floor
       },
     },
-  ] satisfies [EditorialCard, EditorialCard],
-
-  // One card on its own row under `lower`, centred at the same size
-  // (client, 2026-11-12)
-  closing: [
     {
       id: 'tuning',
       title: 'Tuning',
@@ -112,7 +111,7 @@ export const editorial = {
         position: '50% 50%', // client photo (2026-11-12), cropped to the card around the car
       },
     },
-  ] satisfies [EditorialCard],
+  ] satisfies [EditorialCard, EditorialCard],
 
   // Services without a card since the five-card layout (2026-11-10). Their
   // pages stay live; remove an entry only once nothing links to its page.

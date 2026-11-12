@@ -1,8 +1,11 @@
 import { useEffect, useRef, useState, type MouseEvent } from 'react'
 import { flushSync } from 'react-dom'
 import { BrandLogo } from '@/components/brand/BrandLogo'
+import { PhoneIcon } from '@/components/ui/icons'
+import { featuredServices, servicePath } from '@/data/services'
 import { site } from '@/data/site'
 import { useScrollLock } from '@/hooks/useScrollLock'
+import { handleLinkClick } from '@/lib/router'
 import { handleAnchorClick } from '@/lib/scroll'
 
 const PAGE_ID = 'page'
@@ -12,6 +15,7 @@ export function Header() {
   const [scrolled, setScrolled] = useState(false)
   const toggleRef = useRef<HTMLButtonElement>(null)
   const firstLinkRef = useRef<HTMLAnchorElement>(null)
+  const { phone, phoneHref } = site.contact
   useScrollLock(menuOpen)
 
   // Solid header once the page leaves the very top
@@ -50,6 +54,12 @@ export function Header() {
   const onNavClick = (e: MouseEvent<HTMLAnchorElement>) => {
     if (menuOpen) flushSync(() => setMenuOpen(false))
     handleAnchorClick(e)
+  }
+
+  // Service pages are routes, not sections: close the menu, then navigate
+  const onServiceClick = (e: MouseEvent<HTMLAnchorElement>) => {
+    flushSync(() => setMenuOpen(false))
+    handleLinkClick(e)
   }
 
   const solid = scrolled || menuOpen
@@ -98,14 +108,18 @@ export function Header() {
           aria-label={menuOpen ? 'Close menu' : 'Open menu'}
           className="-mr-3 grid size-11 place-items-center justify-self-end text-paper md:hidden"
         >
-          <span aria-hidden="true" className="relative block h-2.5 w-5">
+          {/* Three lines (2026-11-12); the outer two cross into an X, the middle fades */}
+          <span aria-hidden="true" className="relative block h-3 w-5">
             <span
-              className={`absolute left-0 h-px w-full bg-current transition-transform duration-500 ease-out-expo ${
+              className={`absolute left-0 h-px w-full bg-current transition-[top,rotate] duration-500 ease-out-expo ${
                 menuOpen ? 'top-1/2 rotate-45' : 'top-0'
               }`}
             />
             <span
-              className={`absolute left-0 h-px w-full bg-current transition-transform duration-500 ease-out-expo ${
+              className={`absolute top-1/2 left-0 h-px w-full bg-current transition-opacity duration-300 ${menuOpen ? 'opacity-0' : 'opacity-100'}`}
+            />
+            <span
+              className={`absolute left-0 h-px w-full bg-current transition-[top,rotate] duration-500 ease-out-expo ${
                 menuOpen ? 'top-1/2 -rotate-45' : 'top-full'
               }`}
             />
@@ -124,21 +138,43 @@ export function Header() {
             : 'invisible opacity-0 [transition:opacity_0.5s,visibility_0s_0.5s]'
         }`}
       >
-        {/* Tighter rows (2026-10-16): ~27% shorter, slightly smaller type, no numbers */}
-        <ul className="container-site flex flex-col pt-6">
-          {site.nav.map((item, i) => (
-            <li key={item.href} className="border-b border-line">
-              <a
-                ref={i === 0 ? firstLinkRef : undefined}
-                href={item.href}
-                onClick={onNavClick}
-                className="flex items-baseline py-4 text-3xl font-medium tracking-tight text-paper"
-              >
-                {item.label}
-              </a>
-            </li>
-          ))}
-        </ul>
+        <div className="container-site h-full overflow-y-auto overscroll-contain pt-5 pb-10">
+          {/* Call first (client, 2026-11-12): the quickest way to reach the studio */}
+          {phone && (
+            <a ref={firstLinkRef} href={phoneHref} className="menu-call">
+              <PhoneIcon className="menu-call__icon" />
+              <span>Call {phone}</span>
+            </a>
+          )}
+
+          {/* Tighter rows (2026-10-16): ~27% shorter, slightly smaller type, no numbers */}
+          <ul className="flex flex-col pt-3">
+            {site.nav.map((item, i) => (
+              <li key={item.href} className="border-b border-line">
+                <a
+                  ref={i === 0 && !phone ? firstLinkRef : undefined}
+                  href={item.href}
+                  onClick={onNavClick}
+                  className="flex items-baseline py-4 text-3xl font-medium tracking-tight text-paper"
+                >
+                  {item.label}
+                </a>
+              </li>
+            ))}
+          </ul>
+
+          {/* Every service with a card, each to its page (client, 2026-11-12) */}
+          <p className="menu-services__label">Our services</p>
+          <ul className="menu-services">
+            {featuredServices.map((service) => (
+              <li key={service.slug}>
+                <a href={servicePath(service.slug)} onClick={onServiceClick} className="menu-services__link">
+                  {service.title}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
       </nav>
     </header>
   )

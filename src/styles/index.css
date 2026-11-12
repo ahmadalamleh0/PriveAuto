@@ -237,6 +237,62 @@
     }
   }
 
+  /* "Everything done in-house, at our studio." between the hero and the
+     cards (2026-11-12): the hero eyebrow's small tracked caps between two
+     short hairlines, centred */
+  .editorial-intro {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1em;
+    margin: 0 auto clamp(2rem, 1.5rem + 2vw, 3.25rem);
+    font-family: var(--font-editorial);
+    font-size: clamp(0.6875rem, 0.62rem + 0.3vw, 0.8125rem);
+    font-weight: 500;
+    line-height: 1.6;
+    letter-spacing: 0.26em;
+    text-align: center;
+    text-transform: uppercase;
+    color: rgb(242 241 238 / 0.72);
+  }
+
+  /* The text may shrink beside the hairlines; it wraps only between parts */
+  .editorial-intro__text {
+    min-width: 0;
+  }
+
+  .editorial-intro__part {
+    white-space: nowrap;
+  }
+
+  .editorial-intro::before,
+  .editorial-intro::after {
+    content: '';
+    flex: none;
+    width: clamp(1.5rem, 1rem + 2vw, 3rem);
+    height: 1px;
+    background: currentColor;
+    opacity: 0.5;
+  }
+
+  /* Four-across rows (2026-11-12 trial): two per row up to 1023px, four from
+     1024px in the full container width; the two-card row below uses the same
+     columns so its cards match the four above */
+  @media (min-width: 768px) {
+    .collage--four {
+      --collage-cols: 2;
+      max-width: 50rem;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .collage--four {
+      --collage-gap: 2cqi;
+      --collage-cols: 4;
+      max-width: none;
+    }
+  }
+
   .collage__rows {
     display: flex;
     flex-direction: column;
@@ -585,8 +641,9 @@
   /*
    * Brand banner: a scrolling row of monochrome product-brand logos.
    */
+  /* Under Recent Work (2026-11-12): more room above, so it sits a little lower */
   .showcase {
-    padding-block: clamp(0.5rem, 0.25rem + 1.5vw, 2rem) clamp(0.5rem, 0.25rem + 1.5vw, 2rem);
+    padding-block: clamp(2rem, 1.25rem + 3vw, 4.75rem) clamp(0.5rem, 0.25rem + 1.5vw, 2rem);
     overflow: clip;
   }
 
@@ -1956,6 +2013,78 @@
 
   /* Services are multi-select here: a rounded-square mark, not a radio dot */
   .bd-service--check .bd-service__mark {
+    border-radius: 4px;
+  }
+
+  /*
+   * Phone menu (2026-11-12): a Call button first, in the quote sheet's paper
+   * button style, then the page links, then every service in a quiet
+   * two-column list.
+   */
+  .menu-call {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.625rem;
+    min-height: 3rem;
+    border-radius: 10px;
+    background: rgb(242 241 238 / 0.92);
+    font-family: var(--font-editorial);
+    font-size: 0.9375rem;
+    font-weight: 500;
+    letter-spacing: 0.01em;
+    color: #0b0b0c;
+    transition: background-color 200ms ease;
+  }
+
+  .menu-call:active {
+    background: var(--color-paper);
+  }
+
+  .menu-call:focus-visible {
+    outline: 2px solid var(--color-paper);
+    outline-offset: 3px;
+  }
+
+  .menu-call__icon {
+    width: 1rem;
+    height: 1rem;
+    flex: none;
+  }
+
+  .menu-services__label {
+    margin-top: 1.75rem;
+    font-family: var(--font-editorial);
+    font-size: 0.6875rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--color-faint);
+  }
+
+  .menu-services {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: 1rem;
+    margin-top: 0.5rem;
+  }
+
+  .menu-services__link {
+    display: block;
+    padding-block: 0.625rem;
+    font-family: var(--font-editorial);
+    font-size: 1rem;
+    color: rgb(242 241 238 / 0.72);
+    transition: color 200ms ease;
+  }
+
+  .menu-services__link:active,
+  .menu-services__link:focus-visible {
+    color: var(--color-paper);
+  }
+
+  .menu-services__link:focus-visible {
+    outline: 2px solid var(--color-paper);
+    outline-offset: 2px;
     border-radius: 4px;
   }
 

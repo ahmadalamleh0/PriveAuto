@@ -52,3 +52,17 @@ export function ReelsIcon({ className }: IconProps) {
     </svg>
   )
 }
+
+/** Handset outline, for call links */
+export function PhoneIcon({ className }: IconProps) {
+  return (
+    <svg viewBox="0 0 16 16" fill="none" aria-hidden="true" className={className}>
+      <path
+        d="M5.6 2.5 4 2.1a1 1 0 0 0-1.1.6l-.7 1.6c-.2.5-.2 1 0 1.5a12.5 12.5 0 0 0 8 8c.5.2 1 .2 1.5 0l1.6-.7a1 1 0 0 0 .6-1.1l-.4-1.6a1 1 0 0 0-.8-.7l-2.1-.4a1 1 0 0 0-.9.3l-.8.8a8.3 8.3 0 0 1-3.6-3.6l.8-.8a1 1 0 0 0 .3-.9L6.3 3.3a1 1 0 0 0-.7-.8Z"
+        stroke="currentColor"
+        strokeWidth="1.25"
+        strokeLinejoin="round"
+      />
+    </svg>
+  )
+}

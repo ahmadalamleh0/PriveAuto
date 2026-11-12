@@ -83,8 +83,9 @@ export const site = {
       mobileSrc: heroMobile,
       poster: heroPoster,
     } as MediaAsset,
-    // Small location line above the headline (client, 2026-11-10)
-    eyebrow: ['Studio', 'Miami, Florida'],
+    // Small location line above the headline (client, 2026-11-10; "Studio"
+    // dropped 2026-11-12)
+    eyebrow: ['Miami, Florida'],
     headline: [['Experience your car’s'], ['full potential.']],
     // Privé Auto's services (client, 2026-11-12): the five service cards
     // (ceramic coating taken off). Two rows so phones break into two balanced
@@ -210,10 +211,12 @@ export const site = {
     { label: 'Services', href: '#editorial' },
   ] as NavItem[],
 
-  // UNCONFIRMED — supply verified details from the client.
+  // Phone confirmed by the client (2026-11-12); `phoneHref` is its dial link.
+  // No email: the client doesn't use one. location: UNCONFIRMED.
   contact: {
     email: null as string | null,
-    phone: null as string | null,
+    phone: '+1 (305) 733-7887' as string | null,
+    phoneHref: 'tel:+13057337887',
     location: null as string | null,
   },
 
