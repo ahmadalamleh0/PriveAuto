@@ -165,24 +165,21 @@ export const site = {
     },
   },
 
-  // Footer service directory (creative director, 2026-10-09). Two balanced
-  // columns. Each label links to the closest service page (slug = the
-  // service tile's id). Interior Upgrades and Screens → Bespoke Interiors,
-  // Ambient Lighting → Starlight, until they get pages of their own.
+  // Footer service directory (creative director, 2026-10-09; Tuning,
+  // Ambient Lighting and Screens removed 2026-11-12). Two balanced columns.
+  // Each label links to the closest service page (slug = the service tile's
+  // id); Interior Upgrades → Bespoke Interiors until it has a page of its own.
   footerServices: [
     [
       { label: 'Wraps', slug: 'wraps' },
       { label: 'PPF', slug: 'protection-finish' },
       { label: 'Ceramic Coating', slug: 'protection-finish' },
-      { label: 'Bespoke Interiors', slug: 'bespoke-interiors' },
-      { label: 'Wheels', slug: 'wheels-suspension' },
+      { label: 'Body Kits', slug: 'body-kits' },
     ],
     [
+      { label: 'Bespoke Interiors', slug: 'bespoke-interiors' },
       { label: 'Interior Upgrades', slug: 'bespoke-interiors' },
-      { label: 'Ambient Lighting', slug: 'starlight' },
-      { label: 'Screens', slug: 'bespoke-interiors' },
-      { label: 'Tuning', slug: 'tuning' },
-      { label: 'Body Kits', slug: 'body-kits' },
+      { label: 'Wheels', slug: 'wheels-suspension' },
     ],
   ],
 
