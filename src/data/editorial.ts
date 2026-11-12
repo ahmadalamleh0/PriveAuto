@@ -67,7 +67,7 @@ export const editorial = {
   // Body: wrap a word in *asterisks* to italicise it.
   statement: {
     headline: ['The Whole Build.'],
-    body: 'Built upon our passion for everything *Automotive*, Privé Auto is a full service boutique designed to provide the best experience available for your automotive needs.',
+    body: 'Privé Auto is a full service boutique designed to provide the best experience available for your automotive needs.',
   },
 
   lower: [
