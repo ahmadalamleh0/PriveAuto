@@ -92,7 +92,7 @@ export const BRANDS: VehicleBrand[] = [
     id: 'bentley',
     name: 'Bentley',
     logo: { src: bentleyImage },
-    aspect: 3.741,
+    aspect: 2.231,
     models: m('Continental GT', 'Continental GTC', 'Flying Spur', 'Bentayga', 'Mulsanne'),
   },
   {
