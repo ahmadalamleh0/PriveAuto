@@ -2652,6 +2652,12 @@
     z-index: 1;
   }
 
+  /* "Beyond Factory." ~20% smaller than the shared brand headline (client,
+     2026-11-12); "Recent Work" keeps the full size */
+  .brand-headline.philosophy__headline {
+    font-size: clamp(2rem, 0.72rem + 5.28vw, 4rem);
+  }
+
   /*
    * Brand display headline (Michroma caps, lit white-into-graphite fill),
    * shared by "Recent Work" and "Beyond Factory." Words stack on phones and
