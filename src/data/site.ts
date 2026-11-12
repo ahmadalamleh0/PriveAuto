@@ -152,10 +152,13 @@ export const site = {
       // UNCONFIRMED: no enquiry/booking flow yet, so it opens the Coming Soon dialog
       url: null as string | null,
     },
-    // Lights-off / lights-on pair. "On" is the original photo itself; "off" is
-    // the same photo with the original's own lights-off lamp patches
-    // (supercar-led-off-l/r, commit 79b7bcf) baked in. The "on" photo powers
-    // on over the "off" one. Edges melt into the page black via a CSS mask.
+    // Lights-off / lights-on pair. "On" is the original photo itself. "Off"
+    // is the client's unlit render ("Unlit Burgundy Lamborghini in Dark
+    // Studio.png", 2026-11-12): the same framing at 1122×1402, resized to the
+    // mobile cut (registered to the lit photo: scale 1008/1122, no offset);
+    // desktop sets it in the lit photo's 2016-wide studio surround, feathered
+    // over 120px each side. The "on" photo powers on over the "off" one.
+    // Edges melt into the page black via a CSS mask.
     image: {
       alt: 'Burgundy widebody Lamborghini with a large carbon rear wing and bonnet scoop, seen from above and in front in a dark studio',
       width: { desktop: 1600, mobile: 800 },
