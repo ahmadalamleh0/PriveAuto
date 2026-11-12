@@ -17,7 +17,7 @@ Privé Auto's business has been invented.
 
 | What | Where | Current placeholder |
 |---|---|---|
-| Address | `site.location` in `src/data/site.ts` | "Address to be confirmed" (lat/lng 0, 0) |
+| Address | `site.location` in `src/data/site.ts` | Confirmed: 1611 NW 38th St, Miami, FL 33142 (2026-11-12) |
 | Production URL | `vite.config.ts` (or env `SITE_URL`) | `https://prive-auto.example` |
 | Contact, booking | `site.contact`, `site.hero.cta` | Unset (Coming Soon dialog), as before |
 

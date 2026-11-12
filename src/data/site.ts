@@ -195,13 +195,13 @@ export const site = {
 
   credit: { label: 'Powered by', brand: 'Diablo', url: 'https://thediablo.co/' },
 
-  // PLACEHOLDER: Privé Auto's address is not confirmed yet. Set the real
-  // address (Get Directions and the live map query it) and coordinates. The
-  // aerial preview (assets/images/location-aerial.jpg) is the client's Miami
-  // satellite overview (2026-11-09).
+  // Privé Auto's address, confirmed by the client (2026-11-12). Get
+  // Directions and the live map query it. lat/lng aren't used by the site
+  // yet (left at 0, 0). The aerial preview (assets/images/location-aerial.jpg)
+  // is the client's Miami satellite overview (2026-11-09).
   location: {
     name: 'Privé Auto',
-    address: 'Address to be confirmed',
+    address: '1611 NW 38th St, Miami, FL 33142',
     lat: 0,
     lng: 0,
   } as { name: string; address: string; lat: number; lng: number } | null,
