@@ -157,9 +157,9 @@ export const projects: Project[] = [
     logo: bugattiMark,
     confirm: "Chiron variant (it wears a '16' plate): confirm with the client",
     image: {
-      alt: 'Matte black Bugatti Chiron head-on in the white studio, orange 16 plate and LED headlights',
-      webp: set([[bc1560Webp, 560], [bc1960Webp, 960]]),
-      jpg: set([[bc1560Jpg, 560], [bc1960Jpg, 960]]),
+      alt: 'The Chiron from the front quarter, matte black bodywork and orange accents',
+      webp: set([[bc3560Webp, 560], [bc3960Webp, 960]]),
+      jpg: set([[bc3560Jpg, 560], [bc3960Jpg, 960]]),
     },
     gallery: [
       {
@@ -168,9 +168,9 @@ export const projects: Project[] = [
         jpg: set([[bc2560Jpg, 560], [bc2960Jpg, 960]]),
       },
       {
-        alt: 'The Chiron from the front quarter, matte black bodywork and orange accents',
-        webp: set([[bc3560Webp, 560], [bc3960Webp, 960]]),
-        jpg: set([[bc3560Jpg, 560], [bc3960Jpg, 960]]),
+        alt: 'Matte black Bugatti Chiron head-on in the white studio, orange 16 plate and LED headlights',
+        webp: set([[bc1560Webp, 560], [bc1960Webp, 960]]),
+        jpg: set([[bc1560Jpg, 560], [bc1960Jpg, 960]]),
       },
       {
         alt: 'The Chiron front up close: horseshoe grille with an orange 16',
