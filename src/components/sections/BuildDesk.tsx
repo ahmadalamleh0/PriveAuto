@@ -182,14 +182,11 @@ export function BuildDesk() {
           <header className="build-brief__intro">
             <p data-bd-reveal className="bd-status">
               <span aria-hidden="true" className="bd-status__dot" />
-              Ready to collaborate
+              Private Inquiries
             </p>
             <h2 id="build-title" data-bd-reveal className="brand-headline build-brief__title">
               Let’s Talk Builds.
             </h2>
-            <p data-bd-reveal className="build-brief__lede">
-              Choose your vehicle and tell us what you have in mind.
-            </p>
           </header>
 
           <div data-bd-reveal ref={sheet} className="build-brief__sheet">
@@ -409,7 +406,15 @@ function BrandMark({ brand }: { brand: VehicleBrand }) {
       </span>
     )
   }
-  return <span aria-hidden="true" className="vs-mark" style={{ '--a': brand.aspect ?? 1 } as CSSProperties} dangerouslySetInnerHTML={{ __html: brand.logo }} />
+  const style = { '--a': brand.aspect ?? 1, '--s': brand.scale ?? 1 } as CSSProperties
+  if ('src' in brand.logo) {
+    return (
+      <span aria-hidden="true" className="vs-mark" style={style}>
+        <img src={brand.logo.src} alt="" draggable={false} />
+      </span>
+    )
+  }
+  return <span aria-hidden="true" className="vs-mark" style={style} dangerouslySetInnerHTML={{ __html: brand.logo.svg }} />
 }
 
 /**
