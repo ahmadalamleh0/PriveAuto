@@ -19,12 +19,12 @@ export type BuildRequest = {
   make: string
   model: string
   year: string
-  service: string
+  /** The chosen services, comma-separated (one or more) */
+  services: string
   details: string
   name: string
   email: string
   phone: string
-  contact: 'Email' | 'Phone call' | 'Text message'
   /** Honeypot: real people never see or fill it */
   'bot-field': string
 }
