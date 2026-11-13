@@ -4,6 +4,12 @@ import reelFerrariPoster from '@/assets/reels/black-ferrari.jpg'
 import reelFerrari from '@/assets/reels/black-ferrari.mp4'
 import reelUrusPoster from '@/assets/reels/red-urus.jpg'
 import reelUrus from '@/assets/reels/red-urus.mp4'
+import reelRangeRoverPoster from '@/assets/reels/black-range-rover.jpg'
+import reelRangeRover from '@/assets/reels/black-range-rover.mp4'
+import reel911Poster from '@/assets/reels/grey-911-ppf.jpg'
+import reel911 from '@/assets/reels/grey-911-ppf.mp4'
+import reelCullinanPoster from '@/assets/reels/mansory-cullinan.jpg'
+import reelCullinan from '@/assets/reels/mansory-cullinan.mp4'
 import carDesktopOn1600 from '@/assets/images/philosophy/supercar-desktop-on-1600.jpg'
 import carDesktopOn1600Webp from '@/assets/images/philosophy/supercar-desktop-on-1600.webp'
 import carDesktopOn2016 from '@/assets/images/philosophy/supercar-desktop-on-2016.jpg'
@@ -130,6 +136,10 @@ export const site = {
       { id: 'blue-bmw', video: reelBmw, poster: reelBmwPoster, permalink: null, caption: 'Detail film: a BMW in sky blue' },
       { id: 'black-ferrari', video: reelFerrari, poster: reelFerrariPoster, permalink: null, caption: 'A black Ferrari rolls out of the Privé Auto garage' },
       { id: 'red-urus', video: reelUrus, poster: reelUrusPoster, permalink: null, caption: 'A red Lamborghini Urus with a widebody kit on the rooftop' },
+      // Second row (client, 2026-11-13)
+      { id: 'black-range-rover', video: reelRangeRover, poster: reelRangeRoverPoster, permalink: null, caption: 'A matte black Range Rover outside the Privé Auto studio' },
+      { id: 'grey-911-ppf', video: reel911, poster: reel911Poster, permalink: null, caption: 'A grey Porsche 911 with a red stripe gets paint protection film' },
+      { id: 'mansory-cullinan', video: reelCullinan, poster: reelCullinanPoster, permalink: null, caption: 'A Mansory Rolls-Royce Cullinan delivered on the runway' },
     ] as Reel[],
   },
 

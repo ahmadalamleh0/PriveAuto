@@ -7,7 +7,7 @@ import { site } from '@/data/site'
 import { useInstagramReels } from '@/hooks/useInstagramReels'
 import { useGSAP } from '@/lib/gsap'
 
-const SLOTS = [0, 1, 2]
+const SLOTS = [0, 1, 2, 3, 4, 5] // two rows of three
 
 /**
  * Instagram showcase (Venuum reference): a left-aligned profile (gradient

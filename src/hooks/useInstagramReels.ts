@@ -8,7 +8,7 @@ export type ReelsState =
   | { status: 'unavailable'; reels: [] }
 
 const ENDPOINT = '/api/instagram-reels'
-const COUNT = 3
+const COUNT = 6
 
 /**
  * Reels for the showcase: the live feed from the Netlify function when the
