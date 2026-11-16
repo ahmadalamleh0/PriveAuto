@@ -70,10 +70,10 @@ export default function App() {
             {/* Brand strip under Recent Work (client, 2026-11-12) */}
             <Showcase />
             {SHOW_TUNING && <Tuning />}
-            <Philosophy />
-            <Reviews />
-            {/* Interior work, after Testimonials (creative director, 2026-11-16) */}
+            {/* Atelier and "Beyond Factory." swapped places (client, 2026-11-16) */}
             <Atelier />
+            <Reviews />
+            <Philosophy />
             <InstagramShowcase />
             <LocationMap />
             <Faq />
