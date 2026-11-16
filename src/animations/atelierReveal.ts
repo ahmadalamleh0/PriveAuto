@@ -19,7 +19,7 @@ export function atelierReveal() {
     })
 
     gsap.fromTo(
-      '[data-atelier-piece] .atelier__media',
+      '[data-atelier-piece] .atelier__piece',
       { clipPath: 'inset(100% 0% 0% 0%)' },
       {
         clipPath: 'inset(0% 0% 0% 0%)',

@@ -11,7 +11,8 @@ const srcset = (list: { url: string; w: number }[]) => list.map((s) => `${s.url}
  * (Recent Work and Testimonials both scroll sideways): a still editorial
  * spread of tall 3:5 photographs, every second one set lower, so the
  * cabins read like pages of a printed spread. Four across on lg, two by
- * two below (the right column lower). Square corners, quiet captions.
+ * two below (the right column lower). Square corners; each cabin's colour
+ * is set over the foot of its photo.
  * Content: data/atelier.ts. Animation hooks: [data-atelier-title],
  * [data-atelier-piece].
  */
@@ -57,10 +58,8 @@ function Piece({ piece }: { piece: AtelierPiece }) {
           style={photo.position ? { objectPosition: photo.position } : undefined}
         />
       </picture>
-      <figcaption className="atelier__caption">
-        {/* Colours only, no car names (client, 2026-11-16); `car` stays in the data */}
-        <span className="atelier__detail">{piece.detail}</span>
-      </figcaption>
+      {/* The colour name over the photo's foot, no car names (client, 2026-11-16) */}
+      <figcaption className="atelier__caption">{piece.colour}</figcaption>
     </figure>
   )
 }

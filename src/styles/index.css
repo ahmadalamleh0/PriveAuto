@@ -3301,8 +3301,8 @@
    * editorial spread, not a third sideways strip. Tall 3:5 photographs,
    * square corners, every second one set lower by --drop so the row reads
    * like a printed spread. Phones/tablets: two by two (the right column
-   * lower); lg: four across inside a 76rem measure. Captions sit under
-   * the photo: the cabin's colours only (no car names, client 2026-11-16).
+   * lower); lg: four across inside a 76rem measure. Each cabin's colour
+   * name sits over the foot of its photo (no car names, client 2026-11-16).
    */
   .atelier {
     padding-top: clamp(4.5rem, 3rem + 5vw, 8rem);
@@ -3335,17 +3335,18 @@
     transform: translateY(var(--drop));
   }
 
+  /* The photo is the card; its colour name sits over the foot on a scrim */
   .atelier__piece {
-    display: flex;
-    flex-direction: column;
-    gap: clamp(0.75rem, 0.6rem + 0.5vw, 1rem);
-  }
-
-  .atelier__media {
-    display: block;
+    position: relative;
+    container-type: inline-size;
     aspect-ratio: 3 / 5;
     overflow: hidden;
     background: var(--color-surface-raised);
+  }
+
+  .atelier__media {
+    position: absolute;
+    inset: 0;
   }
 
   .atelier__media img {
@@ -3354,18 +3355,43 @@
     object-fit: cover;
   }
 
-  .atelier__caption {
-    display: flex;
-    flex-direction: column;
-    gap: 0.25rem;
-    font-family: var(--font-editorial);
+  /* Functional scrim only: legibility over pale cabins (white seats) */
+  .atelier__piece::after {
+    content: '';
+    position: absolute;
+    inset: auto 0 0;
+    height: 42%;
+    background: linear-gradient(to top, rgb(0 0 0 / 0.72), rgb(0 0 0 / 0.32) 45%, transparent);
+    pointer-events: none;
   }
 
-  .atelier__detail {
-    font-size: clamp(0.8125rem, 0.76rem + 0.2vw, 0.9375rem);
-    font-weight: 300;
-    line-height: 1.45;
-    color: var(--color-muted);
+  /* Colour name: Michroma capitals, wide-tracked, centred over a short
+     hairline (the site's line language). Sized to the card (cqi) so the
+     longest name holds one line on a phone-width card */
+  .atelier__caption {
+    position: absolute;
+    inset: auto 0 0;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: clamp(0.625rem, 5cqi, 1rem);
+    padding: 0 6cqi clamp(1rem, 10cqi, 2rem);
+    font-family: var(--font-brand);
+    font-size: clamp(0.5rem, 4.6cqi, 0.8125rem);
+    line-height: 1.4;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    text-align: center;
+    text-wrap: balance;
+    color: var(--color-paper);
+  }
+
+  .atelier__caption::before {
+    content: '';
+    width: clamp(1.25rem, 12cqi, 2.25rem);
+    height: 1px;
+    background: rgb(242 241 238 / 0.55);
   }
 
   /*

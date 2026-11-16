@@ -23,7 +23,7 @@ import type { Photo } from './projects'
  * assets/images/projects, moved here rather than copied). The Cullinan is
  * left out on purpose. 3:5 crops at 560 and 960 wide, WebP + JPEG.
  *
- * `detail` describes only what the photo shows (colours, not materials):
+ * `colour` names only what the photo shows (colours, not materials):
  * confirm trims with the client before naming leathers or suedes.
  */
 
@@ -31,7 +31,8 @@ export type AtelierPiece = {
   id: string
   /** Make and model, as in Recent Work */
   car: string
-  detail: string
+  /** The cabin's colours, set over the bottom of the photo */
+  colour: string
   photo: Photo
 }
 
@@ -41,7 +42,7 @@ export const atelier: AtelierPiece[] = [
   {
     id: 'bugatti-chiron-cockpit',
     car: 'Bugatti Chiron',
-    detail: 'Orange and black cockpit',
+    colour: 'Orange & Black',
     photo: {
       alt: 'The Chiron cabin in orange and black, the steering wheel framed by the door',
       webp: set([[bc6560Webp, 560], [bc6960Webp, 960]]),
@@ -51,7 +52,7 @@ export const atelier: AtelierPiece[] = [
   {
     id: 'porsche-911-cockpit',
     car: 'Porsche 911 Turbo S',
-    detail: 'Pale blue cockpit',
+    colour: 'Pale Blue',
     photo: {
       alt: 'The 911 cockpit in pale blue, a Porsche crest on the wall beyond',
       webp: set([[pw4560Webp, 560], [pw4960Webp, 960]]),
@@ -61,7 +62,7 @@ export const atelier: AtelierPiece[] = [
   {
     id: 'porsche-911-seats',
     car: 'Porsche 911 Turbo S',
-    detail: 'Pale blue seats, quilted white centres',
+    colour: 'Pale Blue & White',
     photo: {
       alt: 'The 911 seats in pale blue with quilted white centres',
       webp: set([[pw5560Webp, 560], [pw5960Webp, 960]]),
@@ -71,7 +72,7 @@ export const atelier: AtelierPiece[] = [
   {
     id: 'ferrari-f8-cockpit',
     car: 'Ferrari F8 Spider',
-    detail: 'Turquoise cockpit',
+    colour: 'Turquoise',
     photo: {
       alt: 'The Ferrari cockpit in turquoise, carbon steering wheel with the yellow shield',
       webp: set([[fe5560Webp, 560], [fe5960Webp, 960]]),
