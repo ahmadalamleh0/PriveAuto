@@ -3344,15 +3344,30 @@
     background: var(--color-surface-raised);
   }
 
+  /* Photos stack and crossfade (opacity only); the shown one also eases
+     out of a slight zoom while it holds */
   .atelier__media {
     position: absolute;
     inset: 0;
+    opacity: 0;
+    transition: opacity 1.4s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .atelier__media[data-active] {
+    opacity: 1;
   }
 
   .atelier__media img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    transform: scale(1.06);
+    transition: transform 1.4s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .atelier__media[data-active] img {
+    transform: scale(1);
+    transition: transform 6.5s cubic-bezier(0.16, 1, 0.3, 1);
   }
 
   /* Functional scrim only: legibility over pale cabins (white seats) */
@@ -3385,6 +3400,37 @@
     text-align: center;
     text-wrap: balance;
     color: var(--color-paper);
+  }
+
+  /* Colour names stack in one cell so the caption never changes height */
+  .atelier__colours {
+    display: grid;
+  }
+
+  .atelier__colour {
+    grid-area: 1 / 1;
+    opacity: 0;
+    transform: translateY(0.4em);
+    transition:
+      opacity 0.6s ease,
+      transform 0.6s ease;
+  }
+
+  .atelier__colour[data-active] {
+    opacity: 1;
+    transform: none;
+    transition:
+      opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1) 0.35s,
+      transform 0.9s cubic-bezier(0.16, 1, 0.3, 1) 0.35s;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .atelier__media img,
+    .atelier__media[data-active] img,
+    .atelier__colour {
+      transform: none;
+      transition: none;
+    }
   }
 
   .atelier__caption::before {
