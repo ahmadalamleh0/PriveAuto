@@ -3387,11 +3387,7 @@
     position: absolute;
     inset: auto 0 0;
     z-index: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: clamp(0.625rem, 5cqi, 1rem);
-    padding: 0 6cqi clamp(1rem, 10cqi, 2rem);
+    padding: 0 3.5cqi clamp(1rem, 10cqi, 2rem);
     font-family: var(--font-brand);
     font-size: clamp(0.5rem, 4.6cqi, 0.8125rem);
     line-height: 1.4;
@@ -3402,9 +3398,26 @@
     color: var(--color-paper);
   }
 
-  /* Colour names stack in one cell so the caption never changes height */
+  /* Colour names stack in one cell, each anchored to the foot, so a
+     two-line name (phones) never lifts the one-line names in its card */
   .atelier__colours {
     display: grid;
+  }
+
+  .atelier__colour {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-self: end;
+    gap: clamp(0.625rem, 5cqi, 1rem);
+  }
+
+  /* The short hairline rides with its name */
+  .atelier__colour::before {
+    content: '';
+    width: clamp(1.25rem, 12cqi, 2.25rem);
+    height: 1px;
+    background: rgb(242 241 238 / 0.55);
   }
 
   .atelier__colour {
@@ -3431,13 +3444,6 @@
       transform: none;
       transition: none;
     }
-  }
-
-  .atelier__caption::before {
-    content: '';
-    width: clamp(1.25rem, 12cqi, 2.25rem);
-    height: 1px;
-    background: rgb(242 241 238 / 0.55);
   }
 
   /*

@@ -54,8 +54,9 @@ import type { Photo } from './projects'
  * 2026-11-16 (assets/images/atelier). 3:5 crops at 560 and 960 wide,
  * WebP + JPEG. The Cullinan is left out on purpose.
  *
- * `colour` names only what the photo shows (colours, not materials):
- * confirm trims with the client before naming leathers or suedes. `car`
+ * `colour` is a precise colour name matched to the photo's measured shade
+ * (2026-11-16), not the manufacturer's trim name; swap in the official
+ * names if the client supplies them. Colours only, no materials. `car`
  * is not shown (client, 2026-11-16); it stays for reference.
  */
 
@@ -80,12 +81,12 @@ export const atelier: AtelierPiece[] = [
     id: 'warm',
     slides: [
       {
-        colour: 'Orange & Black',
+        colour: 'Tangerine & Onyx',
         car: 'Bugatti Chiron',
         photo: photo('The Chiron cabin in orange and black, the steering wheel framed by the door', [bc6560Jpg, bc6560Webp], [bc6960Jpg, bc6960Webp]),
       },
       {
-        colour: 'Red',
+        colour: 'Signal Red',
         car: 'Mercedes-AMG G-Class',
         photo: photo('A G-Class cabin in red, from the steering wheel across the dashboard', [gRedDash560Jpg, gRedDash560Webp], [gRedDash960Jpg, gRedDash960Webp]),
       },
@@ -95,17 +96,17 @@ export const atelier: AtelierPiece[] = [
     id: 'blues',
     slides: [
       {
-        colour: 'Pale Blue',
+        colour: 'Glacier Blue',
         car: 'Porsche 911 Turbo S',
         photo: photo('The 911 cockpit in pale blue, a Porsche crest on the wall beyond', [pw4560Jpg, pw4560Webp], [pw4960Jpg, pw4960Webp]),
       },
       {
-        colour: 'Blue',
+        colour: 'Cobalt Blue',
         car: 'BMW',
         photo: photo('A BMW cabin in vivid blue, from the steering wheel to the headliner', [bmwBlue560Jpg, bmwBlue560Webp], [bmwBlue960Jpg, bmwBlue960Webp]),
       },
       {
-        colour: 'Red',
+        colour: 'Carmine Red',
         car: 'Mercedes-AMG',
         photo: photo('An AMG steering wheel in red with carbon trim, the dashboard in red behind it', [amgRedWheel560Jpg, amgRedWheel560Webp], [amgRedWheel960Jpg, amgRedWheel960Webp]),
       },
@@ -115,17 +116,17 @@ export const atelier: AtelierPiece[] = [
     id: 'pale',
     slides: [
       {
-        colour: 'Pale Blue & White',
+        colour: 'Glacier Blue & Ivory',
         car: 'Porsche 911 Turbo S',
         photo: photo('The 911 seats in pale blue with quilted white centres', [pw5560Jpg, pw5560Webp], [pw5960Jpg, pw5960Webp]),
       },
       {
-        colour: 'Pink',
+        colour: 'Rose Pink',
         car: 'Mercedes-Benz',
         photo: photo('A Mercedes cabin in pink, from the steering wheel across the dashboard', [mercedesPink560Jpg, mercedesPink560Webp], [mercedesPink960Jpg, mercedesPink960Webp]),
       },
       {
-        colour: 'Red',
+        colour: 'Cardinal Red',
         car: 'Mercedes-AMG',
         photo: photo('A red seat back embroidered with the AMG crest and an AMG badge', [amgRedHeadrest560Jpg, amgRedHeadrest560Webp], [amgRedHeadrest960Jpg, amgRedHeadrest960Webp]),
       },
@@ -135,17 +136,17 @@ export const atelier: AtelierPiece[] = [
     id: 'turquoise',
     slides: [
       {
-        colour: 'Turquoise',
+        colour: 'Caribbean Turquoise',
         car: 'Ferrari F8 Spider',
         photo: photo('The Ferrari cockpit in turquoise, carbon steering wheel with the yellow shield', [fe5560Jpg, fe5560Webp], [fe5960Jpg, fe5960Webp]),
       },
       {
-        colour: 'Turquoise',
+        colour: 'Capri Blue',
         car: 'Rolls-Royce',
         photo: photo('A Rolls-Royce rear seat in turquoise under a starlight headliner', [rrTurquoise560Jpg, rrTurquoise560Webp], [rrTurquoise960Jpg, rrTurquoise960Webp]),
       },
       {
-        colour: 'Red',
+        colour: 'Signal Red',
         car: 'Mercedes-AMG G-Class',
         photo: photo('G-Class front seats in red with quilted panels', [gRedSeats560Jpg, gRedSeats560Webp], [gRedSeats960Jpg, gRedSeats960Webp]),
       },
