@@ -58,7 +58,7 @@ function Piece({ piece }: { piece: AtelierPiece }) {
         />
       </picture>
       <figcaption className="atelier__caption">
-        <span className="atelier__car">{piece.car}</span>
+        {/* Colours only, no car names (client, 2026-11-16); `car` stays in the data */}
         <span className="atelier__detail">{piece.detail}</span>
       </figcaption>
     </figure>
