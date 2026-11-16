@@ -15,6 +15,7 @@ import { Projects } from '@/components/sections/Projects'
 import { Reviews } from '@/components/sections/Reviews'
 import { Showcase } from '@/components/sections/Showcase'
 import { Tuning } from '@/components/sections/Tuning'
+import { QuoteButton } from '@/components/ui/QuoteButton'
 import { findService } from '@/data/services'
 import { ScrollTrigger } from '@/lib/gsap'
 import { matchRoute, usePathname } from '@/lib/router'
@@ -70,16 +71,18 @@ export default function App() {
             {/* Brand strip under Recent Work (client, 2026-11-12) */}
             <Showcase />
             {SHOW_TUNING && <Tuning />}
-            {/* Atelier and "Beyond Factory." swapped places (client, 2026-11-16) */}
+            {/* Visit Us under the brand strip, then Atelier (client, 2026-11-16) */}
+            <LocationMap />
             <Atelier />
             <Reviews />
             <Philosophy />
             <InstagramShowcase />
-            <LocationMap />
             <Faq />
           </main>
         )}
         <Footer />
+        {/* Floating "Get a Quote" (client, 2026-11-16): appears once the intro is done */}
+        {introDone && <QuoteButton route={service?.slug ?? 'home'} />}
       </div>
     </>
   )

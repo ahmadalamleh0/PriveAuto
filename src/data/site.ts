@@ -10,22 +10,22 @@ import reel911Poster from '@/assets/reels/grey-911-ppf.jpg'
 import reel911 from '@/assets/reels/grey-911-ppf.mp4'
 import reelCullinanPoster from '@/assets/reels/mansory-cullinan.jpg'
 import reelCullinan from '@/assets/reels/mansory-cullinan.mp4'
-import carDesktopOn1600 from '@/assets/images/philosophy/supercar-desktop-on-1600.jpg'
-import carDesktopOn1600Webp from '@/assets/images/philosophy/supercar-desktop-on-1600.webp'
-import carDesktopOn2016 from '@/assets/images/philosophy/supercar-desktop-on-2016.jpg'
-import carDesktopOn2016Webp from '@/assets/images/philosophy/supercar-desktop-on-2016.webp'
-import carDesktopOff1600 from '@/assets/images/philosophy/supercar-desktop-off-1600.jpg'
-import carDesktopOff1600Webp from '@/assets/images/philosophy/supercar-desktop-off-1600.webp'
-import carDesktopOff2016 from '@/assets/images/philosophy/supercar-desktop-off-2016.jpg'
-import carDesktopOff2016Webp from '@/assets/images/philosophy/supercar-desktop-off-2016.webp'
-import carMobileOn800 from '@/assets/images/philosophy/supercar-mobile-on-800.jpg'
-import carMobileOn800Webp from '@/assets/images/philosophy/supercar-mobile-on-800.webp'
-import carMobileOn1008 from '@/assets/images/philosophy/supercar-mobile-on-1008.jpg'
-import carMobileOn1008Webp from '@/assets/images/philosophy/supercar-mobile-on-1008.webp'
-import carMobileOff800 from '@/assets/images/philosophy/supercar-mobile-off-800.jpg'
-import carMobileOff800Webp from '@/assets/images/philosophy/supercar-mobile-off-800.webp'
-import carMobileOff1008 from '@/assets/images/philosophy/supercar-mobile-off-1008.jpg'
-import carMobileOff1008Webp from '@/assets/images/philosophy/supercar-mobile-off-1008.webp'
+import carDesktopOn1600 from '@/assets/images/philosophy/supercar-black-on-desktop-1600.jpg'
+import carDesktopOn1600Webp from '@/assets/images/philosophy/supercar-black-on-desktop-1600.webp'
+import carDesktopOn2016 from '@/assets/images/philosophy/supercar-black-on-desktop-2016.jpg'
+import carDesktopOn2016Webp from '@/assets/images/philosophy/supercar-black-on-desktop-2016.webp'
+import carDesktopOff1600 from '@/assets/images/philosophy/supercar-black-desktop-1600.jpg'
+import carDesktopOff1600Webp from '@/assets/images/philosophy/supercar-black-desktop-1600.webp'
+import carDesktopOff2016 from '@/assets/images/philosophy/supercar-black-desktop-2016.jpg'
+import carDesktopOff2016Webp from '@/assets/images/philosophy/supercar-black-desktop-2016.webp'
+import carMobileOn800 from '@/assets/images/philosophy/supercar-black-on-mobile-800.jpg'
+import carMobileOn800Webp from '@/assets/images/philosophy/supercar-black-on-mobile-800.webp'
+import carMobileOn1008 from '@/assets/images/philosophy/supercar-black-on-mobile-1008.jpg'
+import carMobileOn1008Webp from '@/assets/images/philosophy/supercar-black-on-mobile-1008.webp'
+import carMobileOff800 from '@/assets/images/philosophy/supercar-black-mobile-800.jpg'
+import carMobileOff800Webp from '@/assets/images/philosophy/supercar-black-mobile-800.webp'
+import carMobileOff1008 from '@/assets/images/philosophy/supercar-black-mobile-1008.jpg'
+import carMobileOff1008Webp from '@/assets/images/philosophy/supercar-black-mobile-1008.webp'
 import heroPhoto from '@/assets/images/hero/phantom-lineup.jpg'
 import heroPoster from '@/assets/videos/hero-poster.jpg'
 import heroMobile from '@/assets/videos/hero-mobile.mp4'
@@ -163,15 +163,21 @@ export const site = {
       // UNCONFIRMED: no enquiry/booking flow yet, so it opens the Coming Soon dialog
       url: null as string | null,
     },
-    // Lights-off / lights-on pair. "On" is the original photo itself. "Off"
-    // is the client's unlit render ("Unlit Burgundy Lamborghini in Dark
-    // Studio.png", 2026-11-12): the same framing at 1122×1402, resized to the
-    // mobile cut (registered to the lit photo: scale 1008/1122, no offset);
-    // desktop sets it in the lit photo's 2016-wide studio surround, feathered
-    // over 120px each side. The "on" photo powers on over the "off" one.
-    // Edges melt into the page black via a CSS mask.
+    // Lights-off / lights-on pair: the matte black car (client renders
+    // "Matte Black Supercar Under Arch Lights.png" = off and "Illuminated
+    // Matte-Black Supercar in Light Arc.png" = on, 2026-11-16; files
+    // supercar-black-*). Both 1122×1402, resized to the 1008×1260 mobile cut
+    // ("on" registered to "off": scale 1.0032, offset -2.2, -2.6); desktop
+    // sets each in the 2016-wide studio surround, feathered over 120px each
+    // side. The "on" photo powers on over the "off" one. Edges melt into the
+    // page black via a CSS mask. The drawn arc is fitted to this render's
+    // ring (index.css, .philosophy__stage).
+    //
+    // The burgundy car is kept for a switch back (client, 2026-11-16): import
+    // supercar-desktop-on/off-* and supercar-mobile-on/off-* instead, and
+    // restore the burgundy arc values noted in index.css.
     image: {
-      alt: 'Burgundy widebody Lamborghini with a large carbon rear wing and bonnet scoop, seen from above and in front in a dark studio',
+      alt: 'Matte black widebody Lamborghini with a large rear wing and bonnet scoop, seen from above and in front in a dark studio under an arc of light',
       width: { desktop: 1600, mobile: 800 },
       height: { desktop: 1000, mobile: 1000 },
       off: { desktop: { jpg: `${carDesktopOff1600} 1600w, ${carDesktopOff2016} 2016w`, webp: `${carDesktopOff1600Webp} 1600w, ${carDesktopOff2016Webp} 2016w`, src: carDesktopOff1600 }, mobile: { jpg: `${carMobileOff800} 800w, ${carMobileOff1008} 1008w`, webp: `${carMobileOff800Webp} 800w, ${carMobileOff1008Webp} 1008w`, src: carMobileOff800 } },

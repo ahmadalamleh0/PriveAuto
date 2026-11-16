@@ -584,6 +584,81 @@
    * retracts to the right on leave. Padding keeps a 48px+ tap target while
    * the visible mark stays small.
    */
+  /*
+   * Floating "Get a Quote" (client, 2026-11-16). Fixed bottom-left, above
+   * the page but under the header and its menu (z 40 < 50). Small and
+   * quiet (client: black, light, classy): ink glass with a hairline border,
+   * as the header bar when solid, and light tracked capitals; square
+   * corners like the rest of the site. Rises in once after the
+   * intro; steps aside (fade + drop) over the form and the footer.
+   */
+  .quote-fab {
+    position: fixed;
+    left: var(--gutter);
+    bottom: max(1.25rem, calc(env(safe-area-inset-bottom) + 0.75rem));
+    z-index: 40;
+    display: inline-flex;
+    align-items: center;
+    min-height: 2.5rem;
+    padding: 0 1.125rem 0 calc(1.125rem + 0.22em); /* optical: tracking trails the last letter */
+    border: 1px solid rgb(242 241 238 / 0.22);
+    background: rgb(10 10 10 / 0.72);
+    -webkit-backdrop-filter: blur(12px);
+    backdrop-filter: blur(12px);
+    font-family: var(--font-editorial);
+    font-size: 0.6875rem;
+    font-weight: 400;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: rgb(242 241 238 / 0.9);
+    animation: quote-fab-in 0.9s cubic-bezier(0.16, 1, 0.3, 1) 0.4s both;
+    transition:
+      opacity 0.35s ease,
+      translate 0.45s cubic-bezier(0.16, 1, 0.3, 1),
+      border-color 0.25s ease,
+      color 0.25s ease;
+  }
+
+  .quote-fab[data-hidden] {
+    opacity: 0;
+    translate: 0 0.75rem;
+    pointer-events: none;
+  }
+
+  @media (hover: hover) and (pointer: fine) {
+    .quote-fab:hover {
+      border-color: rgb(242 241 238 / 0.5);
+      color: var(--color-paper);
+    }
+  }
+
+  .quote-fab:active {
+    scale: 0.98;
+  }
+
+  .quote-fab:focus-visible {
+    outline: 1px solid var(--color-paper);
+    outline-offset: 3px;
+  }
+
+  @keyframes quote-fab-in {
+    from {
+      opacity: 0;
+      translate: 0 0.75rem;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .quote-fab {
+      animation: none;
+      transition: opacity 0.2s ease;
+    }
+
+    .quote-fab[data-hidden] {
+      translate: none;
+    }
+  }
+
   .cta-line {
     position: relative;
     display: inline-flex;
@@ -2818,9 +2893,14 @@
 
   /* Frames sized for the supercar: the whole car, wing to splitter. Arc
      geometry (fractions of the stage) from the original car's layout */
+  /* Arc geometry = the photo's own light ring, measured by a circle fit
+     (matte black render, 2026-11-16: centre 501.4, 528.9, r 469.8 in the
+     1008×1260 cut), so the drawn line sits on the ring, not beside it.
+     Burgundy render values were: w 0.936 / 0.468, top 0.053, x 50%. */
   .philosophy__stage {
-    --arc-w: 0.936;
-    --arc-top: 0.053;
+    --arc-w: 0.9415;
+    --arc-top: 0.0431;
+    --arc-x: 49.74%;
     position: relative;
     width: calc(100% + 2 * var(--gutter));
     max-width: 72rem;
@@ -2830,8 +2910,9 @@
 
   @media (min-width: 768px) {
     .philosophy__stage {
-      --arc-w: 0.468;
-      --arc-top: 0.053;
+      --arc-w: 0.4708;
+      --arc-top: 0.0431;
+      --arc-x: 49.87%;
       --mask-x: 48%; /* the widened desktop frame: fade the added sides sooner */
       width: 100%;
       aspect-ratio: 1.6 / 1;
@@ -2930,7 +3011,7 @@
 
   .philosophy__arc {
     position: absolute;
-    left: 50%;
+    left: var(--arc-x, 50%);
     top: calc(var(--arc-top) * 100%);
     width: calc(var(--arc-w) * 100%);
     aspect-ratio: 1;
