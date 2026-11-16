@@ -3,6 +3,7 @@ import { Intro } from '@/components/intro/Intro'
 import { Footer } from '@/components/layout/Footer'
 import { Header } from '@/components/layout/Header'
 import { ServicePage } from '@/components/pages/ServicePage'
+import { Atelier } from '@/components/sections/Atelier'
 import { BuildDesk } from '@/components/sections/BuildDesk'
 import { Editorial } from '@/components/sections/Editorial'
 import { Faq } from '@/components/sections/Faq'
@@ -71,6 +72,8 @@ export default function App() {
             {SHOW_TUNING && <Tuning />}
             <Philosophy />
             <Reviews />
+            {/* Interior work, after Testimonials (creative director, 2026-11-16) */}
+            <Atelier />
             <InstagramShowcase />
             <LocationMap />
             <Faq />

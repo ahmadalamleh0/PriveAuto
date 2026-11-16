@@ -23,10 +23,6 @@ import bc5560Jpg from '@/assets/images/projects/bugatti-chiron-5-560.jpg'
 import bc5560Webp from '@/assets/images/projects/bugatti-chiron-5-560.webp'
 import bc5960Jpg from '@/assets/images/projects/bugatti-chiron-5-960.jpg'
 import bc5960Webp from '@/assets/images/projects/bugatti-chiron-5-960.webp'
-import bc6560Jpg from '@/assets/images/projects/bugatti-chiron-6-560.jpg'
-import bc6560Webp from '@/assets/images/projects/bugatti-chiron-6-560.webp'
-import bc6960Jpg from '@/assets/images/projects/bugatti-chiron-6-960.jpg'
-import bc6960Webp from '@/assets/images/projects/bugatti-chiron-6-960.webp'
 import rc1560Jpg from '@/assets/images/projects/rolls-royce-cullinan-1-560.jpg'
 import rc1560Webp from '@/assets/images/projects/rolls-royce-cullinan-1-560.webp'
 import rc1960Jpg from '@/assets/images/projects/rolls-royce-cullinan-1-960.jpg'
@@ -95,10 +91,6 @@ import fe4560Jpg from '@/assets/images/projects/ferrari-4-560.jpg'
 import fe4560Webp from '@/assets/images/projects/ferrari-4-560.webp'
 import fe4960Jpg from '@/assets/images/projects/ferrari-4-960.jpg'
 import fe4960Webp from '@/assets/images/projects/ferrari-4-960.webp'
-import fe5560Jpg from '@/assets/images/projects/ferrari-5-560.jpg'
-import fe5560Webp from '@/assets/images/projects/ferrari-5-560.webp'
-import fe5960Jpg from '@/assets/images/projects/ferrari-5-960.jpg'
-import fe5960Webp from '@/assets/images/projects/ferrari-5-960.webp'
 import pw1560Jpg from '@/assets/images/projects/porsche-911-white-1-560.jpg'
 import pw1560Webp from '@/assets/images/projects/porsche-911-white-1-560.webp'
 import pw1960Jpg from '@/assets/images/projects/porsche-911-white-1-960.jpg'
@@ -111,14 +103,6 @@ import pw3560Jpg from '@/assets/images/projects/porsche-911-white-3-560.jpg'
 import pw3560Webp from '@/assets/images/projects/porsche-911-white-3-560.webp'
 import pw3960Jpg from '@/assets/images/projects/porsche-911-white-3-960.jpg'
 import pw3960Webp from '@/assets/images/projects/porsche-911-white-3-960.webp'
-import pw4560Jpg from '@/assets/images/projects/porsche-911-white-4-560.jpg'
-import pw4560Webp from '@/assets/images/projects/porsche-911-white-4-560.webp'
-import pw4960Jpg from '@/assets/images/projects/porsche-911-white-4-960.jpg'
-import pw4960Webp from '@/assets/images/projects/porsche-911-white-4-960.webp'
-import pw5560Jpg from '@/assets/images/projects/porsche-911-white-5-560.jpg'
-import pw5560Webp from '@/assets/images/projects/porsche-911-white-5-560.webp'
-import pw5960Jpg from '@/assets/images/projects/porsche-911-white-5-960.jpg'
-import pw5960Webp from '@/assets/images/projects/porsche-911-white-5-960.webp'
 
 /**
  * Selected Projects for the VOIR-style collection gallery: Privé Auto's own
@@ -127,6 +111,8 @@ import pw5960Webp from '@/assets/images/projects/porsche-911-white-5-960.webp'
  * step through on tap; `video` on a photo plays a muted 3:5 loop over it
  * while it is the active slide. Maker marks are the brand logos from the
  * quote form (src/assets/brands), drawn as a mask in the text colour.
+ *
+ * Interior photographs live in data/atelier.ts (Atelier section), not here.
  *
  * Model names are only what the photos show; anything marked `confirm`
  * needs the client's check before launch.
@@ -186,11 +172,6 @@ export const projects: Project[] = [
         alt: 'The Chiron from behind: red light bar, orange EB badge and a PRIVÉ plate',
         webp: set([[bc5560Webp, 560], [bc5960Webp, 960]]),
         jpg: set([[bc5560Jpg, 560], [bc5960Jpg, 960]]),
-      },
-      {
-        alt: 'The Chiron cabin in orange and black leather, the steering wheel framed by the door',
-        webp: set([[bc6560Webp, 560], [bc6960Webp, 960]]),
-        jpg: set([[bc6560Jpg, 560], [bc6960Jpg, 960]]),
       },
     ],
   },
@@ -283,16 +264,6 @@ export const projects: Project[] = [
         webp: set([[pw3560Webp, 560], [pw3960Webp, 960]]),
         jpg: set([[pw3560Jpg, 560], [pw3960Jpg, 960]]),
       },
-      {
-        alt: 'The 911 cockpit in pale blue leather, a Porsche crest on the wall beyond',
-        webp: set([[pw4560Webp, 560], [pw4960Webp, 960]]),
-        jpg: set([[pw4560Jpg, 560], [pw4960Jpg, 960]]),
-      },
-      {
-        alt: 'The 911 seats in pale blue with quilted white centres',
-        webp: set([[pw5560Webp, 560], [pw5960Webp, 960]]),
-        jpg: set([[pw5560Jpg, 560], [pw5960Jpg, 960]]),
-      },
     ],
   },
   {
@@ -301,17 +272,13 @@ export const projects: Project[] = [
     model: 'F8 Spider',
     logo: ferrariMark,
     confirm: 'F8 Spider read from the S-duct bonnet and open top; confirm with the client',
+    // The cockpit photo moved to Atelier (2026-11-16): the head-on shot leads
     image: {
-      alt: 'The Ferrari cockpit in tiffany-blue leather, carbon steering wheel with the yellow shield',
-      webp: set([[fe5560Webp, 560], [fe5960Webp, 960]]),
-      jpg: set([[fe5560Jpg, 560], [fe5960Jpg, 960]]),
+      alt: 'The silver F8 Spider head-on in the white studio, S-duct bonnet and turquoise seats',
+      webp: set([[fe2560Webp, 560], [fe2960Webp, 960]]),
+      jpg: set([[fe2560Jpg, 560], [fe2960Jpg, 960]]),
     },
     gallery: [
-      {
-        alt: 'The silver F8 Spider head-on in the white studio, S-duct bonnet and tiffany-blue seats',
-        webp: set([[fe2560Webp, 560], [fe2960Webp, 960]]),
-        jpg: set([[fe2560Jpg, 560], [fe2960Jpg, 960]]),
-      },
       {
         alt: 'Satin silver Ferrari front in the studio: forged carbon splitter and vents',
         webp: set([[fe3560Webp, 560], [fe3960Webp, 960]]),
