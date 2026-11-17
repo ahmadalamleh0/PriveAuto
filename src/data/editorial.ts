@@ -83,7 +83,7 @@ export const editorial = {
   // Body: wrap a word in *asterisks* to italicise it.
   statement: {
     headline: ['A Different Standard.'], // client, 2026-11-16 (was 'The Whole Build.')
-    body: 'Privé Auto is a full service boutique designed to provide the best experience available for your automotive needs.',
+    body: 'We bring together design, performance and craftsmanship to redefine what your vehicle can become.', // client, 2026-11-16
   },
 
   lower: [
