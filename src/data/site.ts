@@ -200,6 +200,7 @@ export const site = {
       { label: 'Bespoke Interiors', slug: 'bespoke-interiors' },
       { label: 'Interior Upgrades', slug: 'bespoke-interiors' },
       { label: 'Wheels', slug: 'wheels-suspension' },
+      { label: 'Tuning', slug: 'tuning' }, // back in the footer (client, 2026-11-16)
     ],
   ],
 

@@ -8,8 +8,8 @@ const SIZES = '(min-width: 1024px) 19rem, 46vw'
 const srcset = (list: { url: string; w: number }[]) => list.map((s) => `${s.url} ${s.w}w`).join(', ')
 
 /** How long each photo holds, and how far each card's cycle is offset from the last */
-const HOLD_MS = 3000 // client, 2026-11-16: faster (was 5000)
-const OFFSET_MS = 750
+const HOLD_MS = 2000 // client, 2026-11-16: every 2 seconds (was 5000, then 3000)
+const OFFSET_MS = 500
 
 /**
  * "Atelier": the interior work. Not another strip (Recent Work and
