@@ -22,6 +22,8 @@ import { matchRoute, usePathname } from '@/lib/router'
 
 /** Tuning section hidden for now (client, 2026-11-12); set true to show it again */
 const SHOW_TUNING = false
+/** Floating "Get a Quote" removed (client, 2026-11-17); set true to bring it back */
+const SHOW_QUOTE_BUTTON = false
 
 export default function App() {
   const route = matchRoute(usePathname())
@@ -82,7 +84,7 @@ export default function App() {
         )}
         <Footer />
         {/* Floating "Get a Quote" (client, 2026-11-16): appears once the intro is done */}
-        {introDone && <QuoteButton route={service?.slug ?? 'home'} />}
+        {SHOW_QUOTE_BUTTON && introDone && <QuoteButton route={service?.slug ?? 'home'} />}
       </div>
     </>
   )
