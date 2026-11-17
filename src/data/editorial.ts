@@ -82,7 +82,7 @@ export const editorial = {
   // Headline: one sentence per line.
   // Body: wrap a word in *asterisks* to italicise it.
   statement: {
-    headline: ['The Whole Build.'],
+    headline: ['A Different Standard.'], // client, 2026-11-16 (was 'The Whole Build.')
     body: 'Privé Auto is a full service boutique designed to provide the best experience available for your automotive needs.',
   },
 
