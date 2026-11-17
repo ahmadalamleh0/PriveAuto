@@ -147,32 +147,28 @@ export function Header() {
             </a>
           )}
 
-          {/* Tighter rows (2026-10-16): ~27% shorter, slightly smaller type, no numbers */}
+          {/* Tighter rows (2026-10-16): ~27% shorter, slightly smaller type, no numbers.
+              The services take the "Services" row's place, each its own row to its
+              page, styled like Home and Contact (client, 2026-11-17) */}
           <ul className="flex flex-col pt-3">
-            {site.nav.map((item, i) => (
-              <li key={item.href} className="border-b border-line">
-                <a
-                  ref={i === 0 && !phone ? firstLinkRef : undefined}
-                  href={item.href}
-                  onClick={onNavClick}
-                  className="flex items-baseline py-4 text-3xl font-medium tracking-tight text-paper"
-                >
-                  {item.label}
-                </a>
-              </li>
-            ))}
-          </ul>
-
-          {/* Every service with a card, each to its page (client, 2026-11-12) */}
-          <p className="menu-services__label">Our services</p>
-          <ul className="menu-services">
-            {featuredServices.map((service) => (
-              <li key={service.slug}>
-                <a href={servicePath(service.slug)} onClick={onServiceClick} className="menu-services__link">
-                  {service.title}
-                </a>
-              </li>
-            ))}
+            {site.nav.flatMap((item, i) => {
+              const row = 'flex items-baseline py-3.5 text-xl font-medium tracking-tight text-paper'
+              if (item.href === '#editorial')
+                return featuredServices.map((service) => (
+                  <li key={service.slug} className="border-b border-line">
+                    <a href={servicePath(service.slug)} onClick={onServiceClick} className={row}>
+                      {service.title}
+                    </a>
+                  </li>
+                ))
+              return (
+                <li key={item.href} className="border-b border-line">
+                  <a ref={i === 0 && !phone ? firstLinkRef : undefined} href={item.href} onClick={onNavClick} className={row}>
+                    {item.label}
+                  </a>
+                </li>
+              )
+            })}
           </ul>
         </div>
       </nav>
